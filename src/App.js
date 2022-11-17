@@ -1,4 +1,5 @@
 import "./App.css";
+import UserPage from "./components/UserPage";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
           This is the start of <i>SHYBYE!</i>, an app hacked during GDI
           Hackathon '22! ✨
         </p>
+        <UserPage></UserPage>
       </body>
-      <footer>&copy; 2022 team shygirls &hearts;</footer>
+      <footer>&copy; 2022</footer>
     </div>
   );
 }
