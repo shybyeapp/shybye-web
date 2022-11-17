@@ -1,10 +1,8 @@
 const AboutTeam = () => {
   return (
     <section>
-      <header>
-        <h1>About the Team</h1>
-      </header>
       <body>
+        <h1>About the Team</h1>
         <p>We'll put some team info here</p>
       </body>
     </section>

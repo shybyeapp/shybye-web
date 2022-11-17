@@ -2,9 +2,15 @@ import "./App.css";
 import React from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import Header from "./components/Header";
 import AboutTeam from "./components/AboutTeam";
+import Home from "./components/Home";
 import ResearchPage from "./components/ResearchPage";
 import { useState } from "react";
+import StickyFooter from "./components/Footer";
 // import UserPage from "./components/UserPage";
 
 export default function App() {
@@ -45,14 +51,22 @@ export default function App() {
 
   return (
     <section className="App">
-      <header className="App-header">
-        <h1 className="App-title">SHYBYE!</h1>
-      </header>
+      <Header></Header>
+
       <Router>
-        <div>
+        <div className="navbar">
           <nav>
-            <Link to="/">Home </Link> |<Link to="/about"> About </Link>|{" "}
-            <Link to="/research">Research </Link>
+            <Stack spacing={2} direction="row" justifyContent="center">
+              <Button variant="text">
+                <Link to="/">Home </Link>
+              </Button>
+              <Button variant="text">
+                <Link to="/about"> About </Link>
+              </Button>
+              <Button variant="text">
+                <Link to="/research">Research </Link>
+              </Button>
+            </Stack>
           </nav>
 
           <Routes>
@@ -62,25 +76,10 @@ export default function App() {
           </Routes>
         </div>
       </Router>
-      <footer className="App-footer">
-        <p>&copy; 2022</p>
-      </footer>
-    </section>
-  );
-}
-
-function Home() {
-  return (
-    <section>
-      <p>
-        This is the start of <i>SHYBYE!</i>, an app hacked during GDI Hackathon
-        '22! ✨
-      </p>
-      <p>we need a login component here</p>
-      <p>
-        upon login, navigate to user page component where they can see their
-        saved challenges and badges
-      </p>
+      <Grid container spacing={2} justifyContent="center">
+        <Grid item xs={12}></Grid>
+      </Grid>
+      <StickyFooter />
     </section>
   );
 }
