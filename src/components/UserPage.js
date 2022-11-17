@@ -1,5 +1,6 @@
 import Challenges from "./Challenges";
 import Badges from "./Badges";
+
 const UserPage = () => {
   return (
     <section>
