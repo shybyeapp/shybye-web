@@ -7,6 +7,7 @@ const Home = () => {
     <section>
       <header></header>
       <body>
+        <img src="Assets/Images/Badges/balloon.png"></img>
         <Typography>
           Complete challenges, collect rewards, reduce social anxiety!"
         </Typography>
