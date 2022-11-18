@@ -6,16 +6,20 @@ import Rewards from "./Rewards";
 const Home = () => {
   return (
     <section>
-      <header></header>
-      <body>
-        <img src="Assets/Images/Logos/ShyBye.png"></img>
-        <Typography>
-          Complete challenges, collect rewards, reduce social anxiety!"
-        </Typography>
-        <Typography>Here's how it works:</Typography>
-        {/* <SignIn></SignIn>
-        <SignUp></SignUp> */}
-      </body>
+      <Grid container spacing={2} alignItems="center" justifyContent="center">
+        <Grid item xs={12} md={6}>
+          Complete challenges, collect rewards, reduce social anxiety!
+          <br></br>
+          <br></br>
+          <Button variant="contained">Get Started</Button>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <img
+            src={require("../Images/Logos/ShyBye.png")}
+            alt="ShyBye logo"
+          ></img>
+        </Grid>
+      </Grid>
     </section>
   );
 };
