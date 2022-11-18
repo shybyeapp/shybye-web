@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.badges {
+  height: 200px;
+  border-radius: 40% ;
+  padding: 30px;
+}
