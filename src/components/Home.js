@@ -2,6 +2,7 @@ import Typography from "@mui/material/Typography";
 import Rewards from "./Rewards";
 // import SignIn from "./SignIn";
 // import SignUp from "./SignUp";
+import { Button, Grid } from "@mui/material";
 
 const Home = () => {
   return (
