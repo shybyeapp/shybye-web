@@ -11,7 +11,7 @@ import Home from "./components/Home";
 import ResearchPage from "./components/ResearchPage";
 import { useState, useEffect } from "react";
 import StickyFooter from "./components/Footer";
-// import UserPage from "./components/UserPage";
+import UserPage from "./components/UserPage";
 import icon from "./Images/favicon.ico";
 
 export default function App() {
