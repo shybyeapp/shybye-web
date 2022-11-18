@@ -8,7 +8,9 @@ const Home = () => {
   return (
     <section>
       <Grid container spacing={2} alignItems="center" justifyContent="center">
+        <Grid item xs={12}></Grid>
         <Grid item xs={12} md={6}>
+          <br></br>
           Complete challenges, collect rewards, reduce social anxiety!
           <br></br>
           <br></br>
