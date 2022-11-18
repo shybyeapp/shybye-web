@@ -11,6 +11,7 @@ import Home from "./components/Home";
 import ResearchPage from "./components/ResearchPage";
 import { useState } from "react";
 import StickyFooter from "./components/Footer";
+import Rewards from "./components/Rewards";
 // import UserPage from "./components/UserPage";
 
 export default function App() {
@@ -66,6 +67,9 @@ export default function App() {
               <Button variant="text">
                 <Link to="/research">Research </Link>
               </Button>
+              <Button variant="text">
+                <Link to="/rewards">Rewards </Link>
+              </Button>
             </Stack>
           </nav>
 
@@ -73,6 +77,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/research" element={<ResearchPage />} />
             <Route path="/about" element={<AboutTeam />} />
+            <Route path="/rewards" element={<Rewards />} />
           </Routes>
         </div>
       </Router>
