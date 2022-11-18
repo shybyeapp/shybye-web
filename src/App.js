@@ -73,7 +73,6 @@ export default function App() {
             <Route path='/' element={<Home />} />
             <Route path='/research' element={<ResearchPage />} />
             <Route path='/about' element={<AboutTeam />} />
-            <Route path='/user' element={<UserPage />} />
           </Routes>
         </div>
       </Router>
