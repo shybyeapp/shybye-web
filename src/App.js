@@ -54,8 +54,19 @@ export default function App() {
 
   const theme = createTheme( {
     palette: {
+      background: {
+        default:'#FBFBEE',
+      },
       primary: {
+    
         main: '#468189',
+    
+        
+      },
+      secondary: {
+      
+        main: '#F4E9CD',
+      
       },
     }});
   
