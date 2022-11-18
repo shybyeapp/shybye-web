@@ -1,22 +1,24 @@
-// import SignIn from "./SignIn";
-// import SignUp from "./SignUp";
+import { Button, Grid } from "@mui/material";
 
 const Home = () => {
   return (
     <section>
-      <header></header>
-      <body>
-        Complete challenges, collect rewards, reduce social anxiety!" Here's how
-        it works:
-        {/* <SignIn></SignIn>
-        <SignUp></SignUp> */}
-      </body>
-      {/* <div className="font-face-js">
-        <b>testing the josefin sans</b>
-      </div>
-      <div className="font-face-inter">
-        <b>testing the inter</b>
-      </div> */}
+      <Grid container spacing={2} alignItems="center" justifyContent="center">
+        <Grid item xs={12}></Grid>
+        <Grid item xs={12} md={6}>
+          <br></br>
+          Complete challenges, collect rewards, reduce social anxiety!
+          <br></br>
+          <br></br>
+          <Button variant="contained">Get Started</Button>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <img
+            src={require("../Images/Logos/ShyBye.png")}
+            alt="ShyBye logo"
+          ></img>
+        </Grid>
+      </Grid>
     </section>
   );
 };
