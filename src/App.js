@@ -36,7 +36,7 @@ export default function App() {
   const getReturningUser = (userInfo) => {
     console.log("adding user");
     axios
-      .post(`${BACKENDURL}/users`)
+      .get(`${BACKENDURL}/users`)
       .then((res) => {
         console.log(res);
       })
