@@ -4,7 +4,7 @@ import ImageList from "@mui/material/ImageList";
 import { CardContent, Card } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
-const BACKENDURL = "https://shy-bye-app.fly.dev";
+// const BACKENDURL = "https://shy-bye-app.fly.dev";
 
 export default function Challenges() {
   // const [allChallenges, setAllChallenges] = React.useState([]);

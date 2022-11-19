@@ -77,11 +77,7 @@ export default function SignIn(props) {
           </Button>
           <Grid container>
             <Grid item xs></Grid>
-            <Grid item>
-              <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
+            <Grid item></Grid>
           </Grid>
         </Box>
       </Box>

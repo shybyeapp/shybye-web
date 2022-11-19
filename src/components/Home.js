@@ -33,12 +33,23 @@ function Home(props) {
   };
 
   return (
-    <Grid container spacing={2} alignItems="center" justifyContent="center">
+    <Grid
+      container
+      spacing={2}
+      alignItems="center"
+      justifyContent="center"
+      sx={{
+        fontFamily: "Inter",
+        fontSize: 32,
+        fontWeight: "bold",
+        lineHeight: 2,
+      }}
+    >
+      <br></br>
       <Grid item xs={12}></Grid>
       <Grid item xs={12} md={6}>
-        <br></br>
-        Complete challenges, collect rewards, reduce social anxiety!
-        <br></br>
+        Complete challenges,
+        <br></br>Collect rewards, & <br></br>Reduce social anxiety
         <br></br>
         <Button variant="contained" onClick={handleClickOpen}>
           Get Started
@@ -57,6 +68,7 @@ function Home(props) {
         <img
           src={require("../Images/Logos/ShyBye.png")}
           alt="ShyBye logo"
+          class="logo"
         ></img>
       </Grid>
     </Grid>
