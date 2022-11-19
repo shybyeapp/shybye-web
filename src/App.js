@@ -82,9 +82,6 @@ export default function App() {
           </Routes>
         </Router>
 
-        <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={12}></Grid>
-        </Grid>
         <StickyFooter />
       </section>
     </ThemeProvider>

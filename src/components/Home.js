@@ -16,31 +16,29 @@ function Home(props) {
     setOpen(false);
   };
   return (
-    <section>
-      <Grid container spacing={2} alignItems="center" justifyContent="center">
-        <Grid item xs={12}></Grid>
-        <Grid item xs={12} md={6}>
-          <br></br>
-          Complete challenges, collect rewards, reduce social anxiety!
-          <br></br>
-          <br></br>
-          <Button variant="contained" onClick={handleClickOpen}>
-            Get Started
-            <Dialog open={open} onClose={handleClose}>
-              <DialogContent>
-                <SignUp handleClose={handleClose} open={open}></SignUp>
-              </DialogContent>
-            </Dialog>
-          </Button>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <img
-            src={require("../Images/Logos/ShyBye.png")}
-            alt="ShyBye logo"
-          ></img>
-        </Grid>
+    <Grid container spacing={2} alignItems="center" justifyContent="center">
+      <Grid item xs={12}></Grid>
+      <Grid item xs={12} md={6}>
+        <br></br>
+        Complete challenges, collect rewards, reduce social anxiety!
+        <br></br>
+        <br></br>
+        <Button variant="contained" onClick={handleClickOpen}>
+          Get Started
+          <Dialog open={open} onClose={handleClose}>
+            <DialogContent>
+              <SignUp handleClose={handleClose} open={open}></SignUp>
+            </DialogContent>
+          </Dialog>
+        </Button>
       </Grid>
-    </section>
+      <Grid item xs={12} md={6}>
+        <img
+          src={require("../Images/Logos/ShyBye.png")}
+          alt="ShyBye logo"
+        ></img>
+      </Grid>
+    </Grid>
   );
 }
 
