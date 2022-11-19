@@ -1,15 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary">
-      {" © 2022 "}
-    </Typography>
-  );
-}
 
 export default function StickyFooter() {
   return (
@@ -29,8 +20,7 @@ export default function StickyFooter() {
         }}
       >
         <Container maxWidth="sm">
-          This app was hacked during GDI Hackathon '22! ✨
-          <Copyright />
+          This app was hacked by Team ShyDevs during GDI Hackathon '22! ✨
         </Container>
       </Box>
     </Box>
