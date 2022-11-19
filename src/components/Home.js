@@ -6,10 +6,9 @@ import DialogContent from "@mui/material/DialogContent";
 import SignUp from "./SignUp";
 import axios from "axios";
 
-function Home(props) {
-  const BACKENDURL = "https://shy-bye-app.fly.dev";
-  // const axios = require("axios");
+const BACKENDURL = "https://shy-bye-app.fly.dev";
 
+function Home(props) {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {

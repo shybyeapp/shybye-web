@@ -1,7 +1,7 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
+import { useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -28,12 +28,14 @@ export default function SignUp(props) {
       username: userData.username,
       password: userData.password,
     });
-    // const data = new FormData(event.currentTarget);
-    // console.log({
-    //   username: data.get("username"),
-    //   password: data.get("password"),
-    // });
     props.handleClose();
+    toDashboard();
+  };
+
+  let navigate = useNavigate();
+  const toDashboard = () => {
+    let path = "/dashboard";
+    navigate(path);
   };
 
   return (
@@ -85,13 +87,6 @@ export default function SignUp(props) {
           <Button type="close" variant="contained" sx={{ mt: 3, mb: 2, ml: 1 }}>
             Cancel
           </Button>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Link href="#" variant="body2">
-                Already have an account? Sign in
-              </Link>
-            </Grid>
-          </Grid>
         </Box>
       </Box>
     </Container>

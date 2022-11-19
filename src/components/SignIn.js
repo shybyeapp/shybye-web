@@ -7,12 +7,26 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
 export default function SignIn(props) {
+  const [currentUserData, setCurrentUserData] = React.useState({
+    username: "",
+    password: "",
+  });
+
+  const onFormChange = (event) => {
+    const stateName = event.target.name;
+    const inputValue = event.target.value;
+
+    const loginFormData = { ...currentUserData };
+    loginFormData[stateName] = inputValue;
+
+    setCurrentUserData(loginFormData);
+  };
+
   const handleSignInSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      username: data.get("username"),
-      password: data.get("password"),
+    props.getUserCallback({
+      username: currentUserData.username,
+      password: currentUserData.password,
     });
     props.handleClose();
   };
@@ -42,7 +56,8 @@ export default function SignIn(props) {
             label="Username"
             name="Username"
             autoComplete="Username"
-            autoFocus
+            // autoFocus
+            onChange={onFormChange}
           />
           <TextField
             margin="normal"

@@ -7,6 +7,9 @@ import Stack from "@mui/material/Stack";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import SignIn from "./SignIn";
+import axios from "axios";
+
+const BACKENDURL = "https://shy-bye-app.fly.dev";
 
 function Header(props) {
   const [open, setOpen] = React.useState(false);
@@ -18,6 +21,19 @@ function Header(props) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const getUserData = (userInfo) => {
+    axios
+      .get(`${BACKENDURL}/login`, userInfo)
+      .then((res) => {
+        console.log(res);
+        console.log("logging user in");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -44,7 +60,11 @@ function Header(props) {
             Sign In
             <Dialog open={open} onClose={handleClose}>
               <DialogContent>
-                <SignIn handleClose={handleClose} open={open}></SignIn>
+                <SignIn
+                  handleClose={handleClose}
+                  open={open}
+                  getUserCallback={getUserData}
+                ></SignIn>
               </DialogContent>
             </Dialog>
           </Button>
