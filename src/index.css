@@ -17,3 +17,34 @@ code {
   border-radius: 40% ;
   padding: 30px;
 }
+<<<<<<< Updated upstream
+=======
+
+.friends{
+  height: 500px;
+}
+
+.research{
+  margin: 0;
+  background-color: #F4E9CD;
+  padding-top: 10px;
+  padding-left: 300px;
+  padding-right: 300px;
+  height: 100%;
+  font-size: 25px;
+}
+
+@font-face {
+  font-family: "Josefin Sans";
+  src: local("JosefinSans"),
+  url("./fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf") format("truetype");
+  /* font-weight: bold; */
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: local("Inter"),
+    url("./fonts/Inter/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+    /* font-weight: bold; */
+    }
+>>>>>>> Stashed changes
