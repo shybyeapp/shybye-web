@@ -4,6 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
+import FormDialog from "./FormDialog";
 
 function Header(props) {
   // const { sections, title } = props;
@@ -30,9 +31,11 @@ function Header(props) {
               </Link>
             </Button>
           </Stack>
-          <Button color="inherit" style={{ textDecoration: "none" }}>
-            Sign In
-          </Button>
+          <FormDialog>
+            <Button color="inherit" style={{ textDecoration: "none" }}>
+              Sign In
+            </Button>
+          </FormDialog>
         </Toolbar>
       </AppBar>
     </Box>

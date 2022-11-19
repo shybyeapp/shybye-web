@@ -13,10 +13,9 @@ import { useState, useEffect } from "react";
 import StickyFooter from "./components/Footer";
 // import UserPage from "./components/UserPage";
 import icon from "./Images/favicon.ico";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 export default function App() {
-  const BACKENDURL = "";
+  const BACKENDURL = "https://shy-bye-app.fly.dev";
 
   // current user state keeps track of the user that is currently logged in
   const [currentUser, setCurrentUser] = useState([]);
@@ -41,7 +40,7 @@ export default function App() {
 
   // async call to db: GET user
   const getReturningUser = (userInfo) => {
-    console.log("adding user");
+    console.log("getting user");
     axios
       .get(`${BACKENDURL}/users`)
       .then((res) => {
@@ -52,32 +51,11 @@ export default function App() {
       });
   };
 
-  const theme = createTheme( {
-    palette: {
-      background: {
-        default:'#FBFBEE',
-      },
-      primary: {
-    
-        main: '#468189',
-    
-        
-      },
-      secondary: {
-      
-        main: '#F4E9CD',
-      
-      },
-    }});
-  
-  
-
   // async call to db: GET user's challenges
 
   // async call to db: GET user's score
 
-  return ( 
-  <ThemeProvider theme = {theme}>
+  return (
     <section className="App">
       <Router>
         <Header></Header>
@@ -93,6 +71,5 @@ export default function App() {
       </Grid>
       <StickyFooter />
     </section>
-    </ThemeProvider>
   );
 }
