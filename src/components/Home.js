@@ -23,7 +23,6 @@ const Home = () => {
           ></img>
         </Grid>
       </Grid>
-      <RewardChallenge></RewardChallenge>
     </section>
   );
 };
