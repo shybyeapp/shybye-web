@@ -1,16 +1,19 @@
-import { Button, Grid, Dialog, DialogContent } from "@mui/material";
+import * as React from "react";
+import { Button, Grid } from "@mui/material";
 import { useState } from "react";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
 import SignUp from "./SignUp";
 
-const Home = () => {
-  const [openSignUp, setOpenSignUp] = useState(false);
+function Home(props) {
+  const [open, setOpen] = useState(false);
 
-  const handleClickOpenSignUp = () => {
-    setOpenSignUp(true);
+  const handleClickOpen = () => {
+    setOpen(true);
   };
 
-  const handleCloseSignUp = () => {
-    setOpenSignUp(false);
+  const handleClose = () => {
+    setOpen(false);
   };
   return (
     <section>
@@ -21,14 +24,11 @@ const Home = () => {
           Complete challenges, collect rewards, reduce social anxiety!
           <br></br>
           <br></br>
-          <Button variant="contained" onClick={handleClickOpenSignUp}>
+          <Button variant="contained" onClick={handleClickOpen}>
             Get Started
-            <Dialog open={openSignUp} onClose={handleCloseSignUp}>
+            <Dialog open={open} onClose={handleClose}>
               <DialogContent>
-                <SignUp
-                  handleClose={handleCloseSignUp}
-                  open={openSignUp}
-                ></SignUp>
+                <SignUp handleClose={handleClose} open={open}></SignUp>
               </DialogContent>
             </Dialog>
           </Button>
@@ -42,6 +42,6 @@ const Home = () => {
       </Grid>
     </section>
   );
-};
+}
 
 export default Home;

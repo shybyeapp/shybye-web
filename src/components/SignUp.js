@@ -14,7 +14,7 @@ export default function SignUp(props) {
       username: data.get("username"),
       password: data.get("password"),
     });
-    props.handleCloseSignUp();
+    props.handleClose();
   };
 
   return (
@@ -61,7 +61,7 @@ export default function SignUp(props) {
           <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2 }}>
             Sign Up
           </Button>
-          <Button variant="contained" sx={{ mt: 3, mb: 2, ml: 1 }}>
+          <Button type="close" variant="contained" sx={{ mt: 3, mb: 2, ml: 1 }}>
             Cancel
           </Button>
           <Grid container justifyContent="flex-end">
