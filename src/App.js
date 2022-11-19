@@ -16,9 +16,10 @@ import RewardAchievement from "./components/RewardAchievement";
 // import UserPage from "./components/UserPage";
 import UserPage from "./components/UserPage";
 import icon from "./Images/favicon.ico";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 export default function App() {
-  const BACKENDURL = "";
+  const BACKENDURL = "https://shy-bye-app.fly.dev";
 
   // current user state keeps track of the user that is currently logged in
   const [currentUser, setCurrentUser] = useState([]);
@@ -43,7 +44,7 @@ export default function App() {
 
   // async call to db: GET user
   const getReturningUser = (userInfo) => {
-    console.log("adding user");
+    console.log("getting user");
     axios
       .get(`${BACKENDURL}/users`)
       .then((res) => {
@@ -54,25 +55,38 @@ export default function App() {
       });
   };
 
+  const theme = createTheme({
+    palette: {
+      background: {
+        default: "#FBFBEE",
+      },
+      primary: {
+        main: "#468189",
+      },
+      secondary: {
+        main: "#F4E9CD",
+      },
+    },
+  });
+
   // async call to db: GET user's challenges
 
   // async call to db: GET user's score
 
   return (
-    <section className="App">
-      <Router>
-        <Header></Header>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/research" element={<ResearchPage />} />
-          <Route path="/about" element={<AboutTeam />} />
-        </Routes>
-      </Router>
+    <ThemeProvider theme={theme}>
+      <section className="App">
+        <Router>
+          <Header></Header>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/research" element={<ResearchPage />} />
+            <Route path="/about" element={<AboutTeam />} />
+          </Routes>
+        </Router>
 
-      <Grid container spacing={2} justifyContent="center">
-        <Grid item xs={12}></Grid>
-      </Grid>
-      <StickyFooter />
-    </section>
+        <StickyFooter />
+      </section>
+    </ThemeProvider>
   );
 }
