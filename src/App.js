@@ -16,7 +16,7 @@ import icon from "./Images/favicon.ico";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 export default function App() {
-  const BACKENDURL = "";
+  const BACKENDURL = "https://shy-bye-app.fly.dev";
 
   // current user state keeps track of the user that is currently logged in
   const [currentUser, setCurrentUser] = useState([]);
@@ -41,7 +41,7 @@ export default function App() {
 
   // async call to db: GET user
   const getReturningUser = (userInfo) => {
-    console.log("adding user");
+    console.log("getting user");
     axios
       .get(`${BACKENDURL}/users`)
       .then((res) => {
