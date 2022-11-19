@@ -1,6 +1,8 @@
+import { Button } from "@mui/material";
+
 const Rewards = () => {
   return (
-    <section class="rewardsContainer">
+    <section>
       <img
         src={require("../Images/Badges/balloon.png")}
         alt="Congratulatory image"
@@ -10,9 +12,11 @@ const Rewards = () => {
       <p>Completing your first challenge</p>
       <p>Here's your medal:</p>
       <img
-        src="../Images/Badges/smiley1.jpg"
-        alt="Badge image"
+        src={require("../Images/Badges/in-love.png")}
+        alt="Congratulatory image"
+        class="badgeImg"
       ></img>
+      <Button variant="contained">Back to Dashboard</Button>
     </section>
   );
 };
