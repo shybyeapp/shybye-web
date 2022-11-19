@@ -1,6 +1,17 @@
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Dialog, DialogContent } from "@mui/material";
+import { useState } from "react";
+import SignUp from "./SignUp";
 
 const Home = () => {
+  const [openSignUp, setOpenSignUp] = useState(false);
+
+  const handleClickOpenSignUp = () => {
+    setOpenSignUp(true);
+  };
+
+  const handleCloseSignUp = () => {
+    setOpenSignUp(false);
+  };
   return (
     <section>
       <Grid container spacing={2} alignItems="center" justifyContent="center">
@@ -10,7 +21,17 @@ const Home = () => {
           Complete challenges, collect rewards, reduce social anxiety!
           <br></br>
           <br></br>
-          <Button variant="contained">Get Started</Button>
+          <Button variant="contained" onClick={handleClickOpenSignUp}>
+            Get Started
+            <Dialog open={openSignUp} onClose={handleCloseSignUp}>
+              <DialogContent>
+                <SignUp
+                  handleClose={handleCloseSignUp}
+                  open={openSignUp}
+                ></SignUp>
+              </DialogContent>
+            </Dialog>
+          </Button>
         </Grid>
         <Grid item xs={12} md={6}>
           <img

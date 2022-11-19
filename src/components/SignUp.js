@@ -6,14 +6,15 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
-export default function SignUp() {
-  const handleSubmit = (event) => {
+export default function SignUp(props) {
+  const handleSignUpSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
       username: data.get("username"),
       password: data.get("password"),
     });
+    props.handleCloseSignUp();
   };
 
   return (
@@ -26,8 +27,13 @@ export default function SignUp() {
           alignItems: "center",
         }}
       >
-        Sign up
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+        Sign Up
+        <Box
+          component="form"
+          noValidate
+          onSubmit={handleSignUpSubmit}
+          sx={{ mt: 3 }}
+        >
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
@@ -52,13 +58,11 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}></Grid>
           </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
+          <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2 }}>
             Sign Up
+          </Button>
+          <Button variant="contained" sx={{ mt: 3, mb: 2, ml: 1 }}>
+            Cancel
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>

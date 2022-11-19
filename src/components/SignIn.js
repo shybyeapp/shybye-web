@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
 export default function SignIn(props) {
-  const handleSubmit = (event) => {
+  const handleSignInSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
@@ -18,7 +18,7 @@ export default function SignIn(props) {
   };
 
   return (
-    <Container component="main" maxWidth="xs" justifyContent="space-between">
+    <Container component="main" maxWidth="xs">
       <Box
         sx={{
           marginTop: 8,
@@ -28,7 +28,12 @@ export default function SignIn(props) {
         }}
       >
         Sign In
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box
+          component="form"
+          onSubmit={handleSignInSubmit}
+          noValidate
+          sx={{ mt: 1 }}
+        >
           <TextField
             margin="normal"
             required
@@ -52,7 +57,7 @@ export default function SignIn(props) {
           <Button type="submit" variant="contained" sx={{ mt: 3, mb: 2 }}>
             Sign In
           </Button>
-          <Button type="close" variant="contained" sx={{ mt: 3, mb: 2 }}>
+          <Button type="close" variant="contained" sx={{ mt: 3, mb: 2, ml: 1 }}>
             Cancel
           </Button>
           <Grid container>

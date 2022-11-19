@@ -14,7 +14,7 @@ export default function StickyFooter() {
       <Box
         component="footer"
         sx={{
-          py: 3,
+          py: 2,
           px: 2,
           mt: "auto",
         }}
