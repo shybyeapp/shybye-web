@@ -44,3 +44,17 @@ body {
     url("./fonts/Inter/Inter-VariableFont_slnt,wght.ttf") format("truetype");
     /* font-weight: bold; */
     }
+
+    /* Rewards Page Styles */
+    .congratsImg {
+
+    }
+
+    .badgeImg {
+      display: inline-block;
+      width: 10%;
+    }
+
+    .medalText {
+      display: inline;
+    }
