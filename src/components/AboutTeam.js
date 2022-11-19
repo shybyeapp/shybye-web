@@ -7,14 +7,14 @@ const AboutTeam = () => {
         <p>
           our team members include:
           <ul>
-            <li>Valorie</li>
-            <li>Linda</li>
-            <li>Anthony</li>
-            <li>Zinet</li>
-            <li>Gabriela</li>
-            <li>Kandance</li>
-            <li>Joseph</li>
-            <li>Cristine</li>
+            <li>Valorie Broderick</li>
+            <li>Linda Paredes</li>
+            <li>Anthony Ahrens</li>
+            <li>Zinet Hyssen</li>
+            <li>Gabriela Webb</li>
+            <li>Kandance Ferguson</li>
+            <li>Joseph Stephens</li>
+            <li>Cristine Johnson</li>
           </ul>
         </p>
       </body>
