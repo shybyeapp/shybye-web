@@ -12,7 +12,7 @@ import ResearchPage from "./components/ResearchPage";
 import { useState, useEffect } from "react";
 import StickyFooter from "./components/Footer";
 // import UserPage from "./components/UserPage";
-import Rewards from "./components/Rewards";
+import RewardAchievement from "./components/RewardAchievement";
 // import UserPage from "./components/UserPage";
 import UserPage from "./components/UserPage";
 import icon from "./Images/favicon.ico";

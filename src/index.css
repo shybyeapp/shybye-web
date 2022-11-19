@@ -43,6 +43,10 @@ body {
     }
 
     .badgeImg {
-      display: inline;
+      display: inline-block;
       width: 10%;
+    }
+
+    .medalText {
+      display: inline;
     }
