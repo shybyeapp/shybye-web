@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 import StickyFooter from "./components/Footer";
 // import UserPage from "./components/UserPage";
 import icon from "./Images/favicon.ico";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 export default function App() {
   const BACKENDURL = "";
@@ -52,47 +52,41 @@ export default function App() {
       });
   };
 
-  const theme = createTheme( {
+  const theme = createTheme({
     palette: {
       background: {
-        default:'#FBFBEE',
+        default: "#FBFBEE",
       },
       primary: {
-    
-        main: '#468189',
-    
-        
+        main: "#468189",
       },
       secondary: {
-      
-        main: '#F4E9CD',
-      
+        main: "#F4E9CD",
       },
-    }});
-  
-  
+    },
+  });
 
   // async call to db: GET user's challenges
 
   // async call to db: GET user's score
 
-  return ( 
-  <ThemeProvider theme = {theme}>
-    <section className="App">
-      <Router>
-        <Header></Header>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/research" element={<ResearchPage />} />
-          <Route path="/about" element={<AboutTeam />} />
-        </Routes>
-      </Router>
+  return (
+    <ThemeProvider theme={theme}>
+      <section className="App">
+        <Router>
+          <Header></Header>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/research" element={<ResearchPage />} />
+            <Route path="/about" element={<AboutTeam />} />
+          </Routes>
+        </Router>
 
-      <Grid container spacing={2} justifyContent="center">
-        <Grid item xs={12}></Grid>
-      </Grid>
-      <StickyFooter />
-    </section>
+        <Grid container spacing={2} justifyContent="center">
+          <Grid item xs={12}></Grid>
+        </Grid>
+        <StickyFooter />
+      </section>
     </ThemeProvider>
   );
 }
