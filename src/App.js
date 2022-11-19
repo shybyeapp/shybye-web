@@ -16,7 +16,8 @@ import icon from "./Images/favicon.ico";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 export default function App() {
-  const BACKENDURL = "https://shy-bye-app.fly.dev";
+  // const BACKENDURL = "https://shy-bye-app.fly.dev";
+  // const axios = require("axios");
 
   // current user state keeps track of the user that is currently logged in
   const [currentUser, setCurrentUser] = useState([]);
@@ -26,31 +27,31 @@ export default function App() {
     favicon.setAttribute("href", icon);
   }, []);
 
-  // async call to db: POST user
-  const addNewUser = (userInfo) => {
-    console.log("adding user");
-    axios
-      .post(`${BACKENDURL}/users`)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // // async call to db: POST user
+  // const addNewUser = (userInfo) => {
+  //   console.log("adding user");
+  //   axios
+  //     .post(`${BACKENDURL}/users`)
+  //     .then((res) => {
+  //       console.log(res);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   // async call to db: GET user
-  const getReturningUser = (userInfo) => {
-    console.log("getting user");
-    axios
-      .get(`${BACKENDURL}/users`)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // const getReturningUser = (userInfo) => {
+  //   console.log("getting user");
+  //   axios
+  //     .get(`${BACKENDURL}/users`)
+  //     .then((res) => {
+  //       console.log(res);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   const theme = createTheme({
     palette: {

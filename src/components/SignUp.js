@@ -7,13 +7,32 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
 export default function SignUp(props) {
+  const [userData, setUserData] = React.useState({
+    username: "",
+    password: "",
+  });
+
+  const onFormChange = (event) => {
+    const stateName = event.target.name;
+    const inputValue = event.target.value;
+
+    const newFormData = { ...userData };
+    newFormData[stateName] = inputValue;
+
+    setUserData(newFormData);
+  };
+
   const handleSignUpSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      username: data.get("username"),
-      password: data.get("password"),
+    props.addUserCallback({
+      username: userData.username,
+      password: userData.password,
     });
+    // const data = new FormData(event.currentTarget);
+    // console.log({
+    //   username: data.get("username"),
+    //   password: data.get("password"),
+    // });
     props.handleClose();
   };
 
@@ -43,6 +62,7 @@ export default function SignUp(props) {
                 label="Username"
                 name="username"
                 autoComplete="username"
+                onChange={onFormChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -54,6 +74,7 @@ export default function SignUp(props) {
                 type="password"
                 id="password"
                 autoComplete="new-password"
+                onChange={onFormChange}
               />
             </Grid>
             <Grid item xs={12}></Grid>

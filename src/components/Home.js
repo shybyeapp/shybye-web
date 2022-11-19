@@ -4,8 +4,12 @@ import { useState } from "react";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import SignUp from "./SignUp";
+import axios from "axios";
 
 function Home(props) {
+  const BACKENDURL = "https://shy-bye-app.fly.dev";
+  // const axios = require("axios");
+
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -15,6 +19,20 @@ function Home(props) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  // async call to db: POST user
+  const addUserData = (userInfo) => {
+    axios
+      .post(`${BACKENDURL}/users`, userInfo)
+      .then((res) => {
+        console.log(res);
+        console.log("adding user");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <Grid container spacing={2} alignItems="center" justifyContent="center">
       <Grid item xs={12}></Grid>
@@ -27,7 +45,11 @@ function Home(props) {
           Get Started
           <Dialog open={open} onClose={handleClose}>
             <DialogContent>
-              <SignUp handleClose={handleClose} open={open}></SignUp>
+              <SignUp
+                handleClose={handleClose}
+                open={open}
+                addUserCallback={addUserData}
+              ></SignUp>
             </DialogContent>
           </Dialog>
         </Button>
