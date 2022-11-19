@@ -42,7 +42,7 @@ export default function App() {
   const theme = createTheme({
     palette: {
       background: {
-        // default: "#F8F1DE",
+        default: "#FBF8EE",
       },
       primary: {
         main: "#77ACA2",

@@ -8,7 +8,7 @@ export default function StickyFooter() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        minHeight: "20vh",
+        minHeight: "100vh",
       }}
     >
       <Box
@@ -17,6 +17,7 @@ export default function StickyFooter() {
           py: 2,
           px: 2,
           mt: "auto",
+          backgroundColor: "#FBF8EE",
         }}
       >
         <Container maxWidth="sm">
