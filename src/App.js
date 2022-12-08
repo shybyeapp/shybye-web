@@ -14,6 +14,7 @@ import icon from "./Images/favicon.ico";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import UserPage from "./components/UserPage";
 import RewardAchievement from "./components/RewardAchievement";
+import { AuthContextProvider } from "./context/AuthContext";
 
 export default function App() {
   // const BACKENDURL = "https://shy-bye-app.fly.dev";
@@ -55,20 +56,21 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <section className="App">
-        <Router>
-          <Header></Header>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/research" element={<ResearchPage />} />
-            <Route path="/about" element={<AboutTeam />} />
-            <Route path="/dashboard" element={<UserPage />} />
-            <Route path="/reward" element={<RewardAchievement />} />
-          </Routes>
-        </Router>
-
-        <StickyFooter />
-      </section>
+      <AuthContextProvider>
+        <section className="App">
+          <Router>
+            <Header></Header>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/research" element={<ResearchPage />} />
+              <Route path="/about" element={<AboutTeam />} />
+              <Route path="/dashboard" element={<UserPage />} />
+              <Route path="/reward" element={<RewardAchievement />} />
+            </Routes>
+          </Router>
+          <StickyFooter />
+        </section>
+      </AuthContextProvider>
     </ThemeProvider>
   );
 }
