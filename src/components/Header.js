@@ -8,11 +8,21 @@ import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import SignIn from "./SignIn";
 import axios from "axios";
+import { UserAuth } from "../context/AuthContext";
 
-const BACKENDURL = "https://shy-bye-app.fly.dev";
+// const BACKENDURL = "https://shy-bye-app.fly.dev";
 
 function Header(props) {
   const [open, setOpen] = React.useState(false);
+  const { user, googleSignOut } = UserAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await googleSignOut();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -22,17 +32,17 @@ function Header(props) {
     setOpen(false);
   };
 
-  const getUserData = (userInfo) => {
-    axios
-      .get(`${BACKENDURL}/login`, userInfo)
-      .then((res) => {
-        console.log(res);
-        console.log("logging user in");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // const getUserData = (userInfo) => {
+  //   axios
+  //     .get(`${BACKENDURL}/login`, userInfo)
+  //     .then((res) => {
+  //       console.log(res);
+  //       console.log("logging user in");
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -56,18 +66,34 @@ function Header(props) {
               </Link>
             </Button>
           </Stack>
-          <Button color="inherit" onClick={handleClickOpen}>
-            Sign In
-            <Dialog open={open} onClose={handleClose}>
-              <DialogContent>
-                <SignIn
-                  handleClose={handleClose}
-                  open={open}
-                  getUserCallback={getUserData}
-                ></SignIn>
-              </DialogContent>
-            </Dialog>
-          </Button>
+          {user?.displayName ? (
+            <Button color="inherit" onClick={handleSignOut}>
+              Sign Out
+            </Button>
+          ) : (
+            <Button color="inherit" onClick={handleClickOpen}>
+              Sign In
+              <Dialog open={open} onClose={handleClose}>
+                <DialogContent>
+                  <SignIn
+                    handleClose={handleClose}
+                    open={open}
+                    // getUserCallback={getUserData}
+                  ></SignIn>
+                </DialogContent>
+              </Dialog>
+            </Button>
+          )}
+
+          {/* <Dialog open={open} onClose={handleClose}>
+            <DialogContent>
+              <SignIn
+                handleClose={handleClose}
+                open={open}
+                // getUserCallback={getUserData}
+              ></SignIn>
+            </DialogContent>
+          </Dialog> */}
         </Toolbar>
       </AppBar>
     </Box>
