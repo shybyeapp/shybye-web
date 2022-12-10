@@ -6,6 +6,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "@/App.css"
+import "@/index.css"
 
 /** @type {(AppProps: import("next/app").AppProps) => JSX.Element} */
 export default function App({ Component, pageProps }) {

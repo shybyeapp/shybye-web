@@ -1,23 +1,20 @@
-import * as React from "react";
-import { Button, Grid } from "@mui/material";
+
 import { useState } from "react";
+import axios from "axios";
+
+import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
-import SignUp from "./SignUp";
-import axios from "axios";
+import Grid from "@mui/material/Grid";
+
+import SignUp from "@/components/SignUp";
 
 const BACKENDURL = "https://shy-bye-app.fly.dev";
 
-function Home(props) {
+export default function Home() {
   const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const handleClickOpen = () => void setOpen(true);
+  const handleClose = () => void setOpen(false);
 
   // async call to db: POST user
   const addUserData = (userInfo) => {
@@ -59,20 +56,18 @@ function Home(props) {
                 handleClose={handleClose}
                 open={open}
                 addUserCallback={addUserData}
-              ></SignUp>
+              />
             </DialogContent>
           </Dialog>
         </Button>
       </Grid>
       <Grid item xs={12} md={6}>
         <img
-          src={require("../Images/Logos/ShyBye.png")}
+          src="images/brand/ShyBye.png"
           alt="ShyBye logo"
-          class="logo"
-        ></img>
+          className="logo"
+        />
       </Grid>
     </Grid>
   );
 }
-
-export default Home;

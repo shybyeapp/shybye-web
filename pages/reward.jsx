@@ -1,20 +1,19 @@
-import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 
-const RewardAchievement = () => {
-  let navigate = useNavigate();
-  const toDashboard = () => {
-    let path = "/dashboard";
-    navigate(path);
-  };
+import Button from "@mui/material/Button";
+
+export default function RewardAchievement() {
+  const router = useRouter();
+  const toDashboard = () => router.push("/dashboard");
+
   return (
     <section id="rewards">
       <div>
         <img
-          src={require("../Images/Badges/balloon.png")}
+          src="images/badges/balloon.png"
           alt="Congratulations"
           class="congratsImg"
-        ></img>
+        />
         <h1>Congrats! You earned your first achievement:</h1>
       </div>
       <div>
@@ -23,10 +22,10 @@ const RewardAchievement = () => {
       </div>
       <div>
         <img
-          src={require("../Images/Badges/in-love.png")}
+          src="images/badges/in-love.png"
           alt="Congratulations"
           class="badgeImg"
-        ></img>
+        />
       </div>
       <div>
         <Button variant="contained" onClick={toDashboard}>
@@ -36,5 +35,3 @@ const RewardAchievement = () => {
     </section>
   );
 };
-
-export default RewardAchievement;

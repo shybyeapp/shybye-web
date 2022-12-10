@@ -1,16 +1,26 @@
-import * as React from "react";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import { useNavigate } from "react-router-dom";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
-export default function SignUp(props) {
-  const [userData, setUserData] = React.useState({
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
+
+/**
+ * @typedef {object} Props
+ * @property {(formData: { username: string; password: string }) => void} addUserCallback
+ * @property {() => void} handleClose
+ */
+
+/** @param {Props} props */
+export default function SignUp({ addUserCallback, handleClose }) {
+  const [userData, setUserData] = useState({
     username: "",
     password: "",
   });
+
+  const router = useRouter()
 
   const onFormChange = (event) => {
     const stateName = event.target.name;
@@ -24,18 +34,9 @@ export default function SignUp(props) {
 
   const handleSignUpSubmit = (event) => {
     event.preventDefault();
-    props.addUserCallback({
-      username: userData.username,
-      password: userData.password,
-    });
-    props.handleClose();
-    toDashboard();
-  };
-
-  let navigate = useNavigate();
-  const toDashboard = () => {
-    let path = "/dashboard";
-    navigate(path);
+    addUserCallback(userData);
+    handleClose();
+    router.push("/dashboard")
   };
 
   return (

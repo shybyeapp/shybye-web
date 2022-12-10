@@ -1,10 +1,8 @@
-import * as React from "react";
+import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import { Box } from "@mui/system";
-import { Avatar } from "@mui/material";
 
-const AboutTeam = () => {
+export default function About() {
   return (
     <section>
       <Grid
@@ -236,7 +234,6 @@ const AboutTeam = () => {
           }}
           elevation={3}
         >
-          <body>
             This app was made in 4 days during the 2022 Girl Develop It Virtual
             Hackathon for Health.
             <br></br>The back end of this app was made with Spring, Java,
@@ -245,11 +242,8 @@ const AboutTeam = () => {
             MaterialUI, & deployed on Netlify.
             <br></br>Planning, protypes, and design were assembled on Figma.
             <br></br>Badge images sourced from Flaticon.
-          </body>
         </Grid>
       </Grid>
     </section>
   );
 };
-
-export default AboutTeam;

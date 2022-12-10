@@ -1,5 +1,6 @@
 import Grid from "@mui/material/Grid";
-const ResearchPage = () => {
+
+export default function Research() {
   return (
     <Grid
       container
@@ -32,5 +33,3 @@ const ResearchPage = () => {
     </Grid>
   );
 };
-
-export default ResearchPage;

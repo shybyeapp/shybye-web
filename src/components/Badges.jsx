@@ -1,22 +1,22 @@
-import { Button, Grid } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 
-const Badges = () => {
-  const navigate = useNavigate();
-  const goToReward = () => {
-    let path = "/reward";
-    navigate(path);
-  };
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+
+export default function Badges() {
+  const router = useRouter()
+  const goToReward = () => router.push("/reward")
+
   return (
     <section>
       <h1>Badges You've Earned</h1>
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid xs={12} md={4}>
           <img
-            src={require("../Images/Badges/in-love.png")}
+            src="images/badges/in-love.png"
             alt="love smiley face"
             class="badges"
-          ></img>
+          />
           <Grid xs={12}>
             <Button onClick={goToReward} variant="contained">
               see reward
@@ -25,10 +25,10 @@ const Badges = () => {
         </Grid>
         <Grid xs={12} md={4}>
           <img
-            src={require("../Images/Badges/fist-bump.png")}
+            src="images/badges/fist-bump.png"
             alt="fist bump"
             class="badges"
-          ></img>
+          />
           <Grid xs={12}>
             <Button onClick={goToReward} variant="contained">
               see reward
@@ -37,10 +37,10 @@ const Badges = () => {
         </Grid>
         <Grid xs={12} md={4}>
           <img
-            src={require("../Images/Badges/hello.png")}
+            src="images/badges/hello.png"
             alt="hello speech bubble"
             class="badges"
-          ></img>
+          />
           <Grid xs={12}>
             <Button onClick={goToReward} variant="contained">
               see reward
@@ -51,5 +51,3 @@ const Badges = () => {
     </section>
   );
 };
-
-export default Badges;

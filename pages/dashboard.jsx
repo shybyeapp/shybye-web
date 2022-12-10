@@ -1,23 +1,20 @@
-import Challenges from "./Challenges";
-import Badges from "./Badges";
+import Badges from "@/components/Badges";
+import Challenges from "@/components/Challenges";
 import Grid from "@mui/material/Grid";
 
-const UserPage = () => {
+export default function Dashboard() {
   return (
     <section>
       <Grid container spacing={2}>
-        <Grid item xs={12}></Grid>
+        <Grid item xs={12} />
         <Grid item xs={12}>
           Recommended Challenges
         </Grid>
         <Grid item xs={12}>
-          <Challenges></Challenges>
+          <Challenges />
         </Grid>
       </Grid>
-
-      <Badges></Badges>
+      <Badges />
     </section>
   );
 };
-
-export default UserPage;

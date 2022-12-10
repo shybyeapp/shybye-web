@@ -1,8 +1,9 @@
-import * as React from "react";
-import ImageList from "@mui/material/ImageList";
 // import axios from "axios";
-import { CardContent, Card } from "@mui/material";
+
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
+import ImageList from "@mui/material/ImageList";
 
 // const BACKENDURL = "https://shy-bye-app.fly.dev";
 
@@ -42,8 +43,8 @@ export default function Challenges() {
             gridAutoColumns: "minmax(200px, 1fr)",
           }}
         >
-          {itemData.map((item) => (
-            <Card sx={{ ml: 1, mr: 1, p: 1 }}>
+          {itemData.map((item, index) => (
+            <Card key={index} sx={{ ml: 1, mr: 1, p: 1 }}>
               <CardContent /> <b>{item.difficulty}</b>
               <CardContent />
               {item.challengeName}

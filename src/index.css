@@ -26,19 +26,3 @@ body {
 .logo {
   border-radius: 40% ;
 }
-
-
-
-@font-face {
-  font-family: "Josefin Sans";
-  src: local("JosefinSans"),
-  url("./fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf") format("truetype");
-  /* font-weight: bold; */
-  }
-
-  @font-face {
-    font-family: "Inter";
-    src: local("Inter"),
-    url("./fonts/Inter/Inter-VariableFont_slnt,wght.ttf") format("truetype");
-    /* font-weight: bold; */
-    }

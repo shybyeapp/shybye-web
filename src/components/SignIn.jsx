@@ -1,13 +1,20 @@
-import * as React from "react";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+import { useState } from "react";
 
-export default function SignIn(props) {
-  const [currentUserData, setCurrentUserData] = React.useState({
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
+
+/**
+ * @typedef {object} Props
+ * @property {(formData: { username: string; password: string }) => void} getUserCallback
+ * @property {() => void} handleClose
+ */
+
+/** @param {Props} props */
+export default function SignIn({ getUserCallback, handleClose }) {
+  const [currentUserData, setCurrentUserData] = useState({
     username: "",
     password: "",
   });
@@ -24,11 +31,8 @@ export default function SignIn(props) {
 
   const handleSignInSubmit = (event) => {
     event.preventDefault();
-    props.getUserCallback({
-      username: currentUserData.username,
-      password: currentUserData.password,
-    });
-    props.handleClose();
+    getUserCallback(currentUserData);
+    handleClose();
   };
 
   return (
