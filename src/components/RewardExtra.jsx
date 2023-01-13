@@ -1,19 +1,17 @@
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 
-const RewardExtra = () => {
+export default function RewardExtra() {
   return (
     <section id="rewards">
       <img
-        src={require("../Images/Badges/fist-bump.png")}
+        src="images/badges/fist-bump.png"
         alt="Congratulations"
         class="congratsImg"
-      ></img>
+      />
       <h1>
         Congrats! You earned an extra 3pts for completing your first challenge!
       </h1>
       <Button variant="contained">Back to Dashboard</Button>
     </section>
   );
-};
-
-export default RewardExtra;
+}

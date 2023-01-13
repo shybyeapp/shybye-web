@@ -1,9 +1,10 @@
-import * as React from "react";
-import { AppBar, Box } from "@mui/material";
-import Toolbar from "@mui/material/Toolbar";
+import { useState } from "react";
+import Link from "next/link";
+import axios from "axios";
+
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
-import Stack from "@mui/material/Stack";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import SignIn from "./SignIn";
@@ -49,22 +50,15 @@ function Header(props) {
       <AppBar position="static">
         <Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
           <Stack spacing={2} direction="row" justifyContent="center">
-            <Button color="inherit">
-              <Link to="/" style={{ textDecoration: "none" }}>
-                Home{" "}
-              </Link>
-            </Button>
-            <Button color="inherit">
-              <Link to="/about" style={{ textDecoration: "none" }}>
-                {" "}
-                About{" "}
-              </Link>
-            </Button>
-            <Button color="inherit">
-              <Link to="/research" style={{ textDecoration: "none" }}>
-                Research{" "}
-              </Link>
-            </Button>
+            <Link href="/" style={{ textDecoration: "none" }}>
+              <Button color="inherit">Home</Button>
+            </Link>
+            <Link href="/about" style={{ textDecoration: "none" }}>
+              <Button color="inherit">About</Button>
+            </Link>
+            <Link href="/research" style={{ textDecoration: "none" }}>
+              <Button color="inherit">Research</Button>
+            </Link>
           </Stack>
           {user?.displayName ? (
             <Button color="inherit" onClick={handleSignOut}>
@@ -99,5 +93,3 @@ function Header(props) {
     </Box>
   );
 }
-
-export default Header;
