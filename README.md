@@ -1,4 +1,7 @@
-# ShyBye
+<div align="center">
+  🙈
+  <h1>ShyBye</h1>
+</div>
 
 **Our mission** is to help individuals overcome social anxiety and loneliness by
 gamifying primarily in-person social interactions through a variety of fun
