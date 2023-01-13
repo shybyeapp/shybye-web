@@ -6,7 +6,7 @@ export default function RewardExtra() {
       <img
         src="images/badges/fist-bump.png"
         alt="Congratulations"
-        class="congratsImg"
+        className="congratsImg"
       />
       <h1>
         Congrats! You earned an extra 3pts for completing your first challenge!

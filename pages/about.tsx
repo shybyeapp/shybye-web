@@ -13,7 +13,6 @@ export default function About() {
           fontSize: 32,
           fontWeight: "bold",
         }}
-        elevation={3}
       >
         <h1>About the Team</h1>
       </Grid>
@@ -25,12 +24,11 @@ export default function About() {
             fontFamily: "Inter",
             fontSize: 16,
           }}
-          elevation={3}
         >
           <h2>UX Design & Research</h2>
         </Grid>
 
-        <Grid item xs={6} md={4} alignItems="center" justifyContent="center">
+        <Grid item xs={6} md={4}>
           <Paper
             sx={{
               minHeight: 200,
@@ -39,12 +37,8 @@ export default function About() {
               fontWeight: "bold",
             }}
             elevation={3}
-            alignItems="center"
-            justifyContent="center"
           >
-            <br></br>
-            Linda Paredes
-            <br></br>
+            <br></br>Linda Paredes
           </Paper>
         </Grid>
 
@@ -97,7 +91,6 @@ export default function About() {
             fontFamily: "Inter",
             fontSize: 16,
           }}
-          elevation={3}
         >
           <h2>Back End</h2>
         </Grid>
@@ -152,7 +145,6 @@ export default function About() {
             fontFamily: "Inter",
             fontSize: 16,
           }}
-          elevation={3}
         >
           <h2>Front End</h2>
         </Grid>
@@ -220,7 +212,6 @@ export default function About() {
             fontFamily: "Inter",
             fontSize: 32,
           }}
-          elevation={3}
         >
           <h1>About the Stack</h1>
         </Grid>
@@ -232,7 +223,6 @@ export default function About() {
             fontSize: 16,
             lineHeight: 2,
           }}
-          elevation={3}
         >
           This app was made in 4 days during the 2022 Girl Develop It Virtual
           Hackathon for Health.

@@ -15,7 +15,7 @@ export default function Badges() {
           <img
             src="images/badges/in-love.png"
             alt="love smiley face"
-            class="badges"
+            className="badges"
           />
           <Grid xs={12}>
             <Button onClick={goToReward} variant="contained">
@@ -27,7 +27,7 @@ export default function Badges() {
           <img
             src="images/badges/fist-bump.png"
             alt="fist bump"
-            class="badges"
+            className="badges"
           />
           <Grid xs={12}>
             <Button onClick={goToReward} variant="contained">
@@ -39,7 +39,7 @@ export default function Badges() {
           <img
             src="images/badges/hello.png"
             alt="hello speech bubble"
-            class="badges"
+            className="badges"
           />
           <Grid xs={12}>
             <Button onClick={goToReward} variant="contained">

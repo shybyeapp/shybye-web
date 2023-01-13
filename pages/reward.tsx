@@ -12,19 +12,19 @@ export default function RewardAchievement() {
         <img
           src="images/badges/balloon.png"
           alt="Congratulations"
-          class="congratsImg"
+          className="congratsImg"
         />
         <h1>Congrats! You earned your first achievement:</h1>
       </div>
       <div>
         <p>Completing your first challenge</p>
-        <p class="medalText">Here's your badge:</p>
+        <p className="medalText">Here's your badge:</p>
       </div>
       <div>
         <img
           src="images/badges/in-love.png"
           alt="Congratulations"
-          class="badgeImg"
+          className="badgeImg"
         />
       </div>
       <div>
