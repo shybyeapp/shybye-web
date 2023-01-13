@@ -1,7 +1,7 @@
 # ShyBye #
-**Our mission** is to be a place for individuals overcome social anxiety and
-loneliness by gamifying primarily in-person social interactions, providing a
-variety of fun social challenges
+**Our mission** is to help individuals overcome social anxiety and loneliness by
+gamifying primarily in-person social interactions through a variety of fun
+social challenges
 
 ShyBye was initially created over the span of *four days* during the 2022
 "[GDI Virtual Hackathon](https://girldevelopit.com/virtual-hackathon/): Hack for
