@@ -34,4 +34,4 @@ export default function RewardAchievement() {
       </div>
     </section>
   );
-};
+}

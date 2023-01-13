@@ -234,16 +234,16 @@ export default function About() {
           }}
           elevation={3}
         >
-            This app was made in 4 days during the 2022 Girl Develop It Virtual
-            Hackathon for Health.
-            <br></br>The back end of this app was made with Spring, Java,
-            PostgresQL, and deployed on fly.io.
-            <br></br>The front end of this app was made with React, Javascript,
-            MaterialUI, & deployed on Netlify.
-            <br></br>Planning, protypes, and design were assembled on Figma.
-            <br></br>Badge images sourced from Flaticon.
+          This app was made in 4 days during the 2022 Girl Develop It Virtual
+          Hackathon for Health.
+          <br></br>The back end of this app was made with Spring, Java,
+          PostgresQL, and deployed on fly.io.
+          <br></br>The front end of this app was made with React, Javascript,
+          MaterialUI, & deployed on Netlify.
+          <br></br>Planning, protypes, and design were assembled on Figma.
+          <br></br>Badge images sourced from Flaticon.
         </Grid>
       </Grid>
     </section>
   );
-};
+}

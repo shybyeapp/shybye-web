@@ -13,4 +13,4 @@ export default function RewardChallenge() {
       <Button variant="contained">Next</Button>
     </section>
   );
-};
+}

@@ -8,8 +8,10 @@ export default function RewardExtra() {
         alt="Congratulations"
         class="congratsImg"
       />
-      <h1>Congrats! You earned an extra 3pts for completing your first challenge!</h1>
+      <h1>
+        Congrats! You earned an extra 3pts for completing your first challenge!
+      </h1>
       <Button variant="contained">Back to Dashboard</Button>
     </section>
   );
-};
+}

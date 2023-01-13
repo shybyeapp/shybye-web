@@ -32,4 +32,4 @@ export default function Research() {
       </Grid>
     </Grid>
   );
-};
+}

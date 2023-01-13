@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import axios from "axios";
 
@@ -62,11 +61,7 @@ export default function Home() {
         </Button>
       </Grid>
       <Grid item xs={12} md={6}>
-        <img
-          src="images/brand/ShyBye.png"
-          alt="ShyBye logo"
-          className="logo"
-        />
+        <img src="images/brand/ShyBye.png" alt="ShyBye logo" className="logo" />
       </Grid>
     </Grid>
   );

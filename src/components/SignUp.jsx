@@ -20,7 +20,7 @@ export default function SignUp({ addUserCallback, handleClose }) {
     password: "",
   });
 
-  const router = useRouter()
+  const router = useRouter();
 
   const onFormChange = (event) => {
     const stateName = event.target.name;
@@ -36,7 +36,7 @@ export default function SignUp({ addUserCallback, handleClose }) {
     event.preventDefault();
     addUserCallback(userData);
     handleClose();
-    router.push("/dashboard")
+    router.push("/dashboard");
   };
 
   return (

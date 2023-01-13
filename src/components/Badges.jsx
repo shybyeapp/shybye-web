@@ -4,8 +4,8 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 
 export default function Badges() {
-  const router = useRouter()
-  const goToReward = () => router.push("/reward")
+  const router = useRouter();
+  const goToReward = () => router.push("/reward");
 
   return (
     <section>
@@ -50,4 +50,4 @@ export default function Badges() {
       </Grid>
     </section>
   );
-};
+}
