@@ -9,6 +9,7 @@ export default function RewardAchievement() {
   return (
     <section id="rewards">
       <div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="images/badges/balloon.png"
           alt="Congratulations"
@@ -18,9 +19,10 @@ export default function RewardAchievement() {
       </div>
       <div>
         <p>Completing your first challenge</p>
-        <p className="medalText">Here's your badge:</p>
+        <p className="medalText">Here&apos;s your badge:</p>
       </div>
       <div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="images/badges/in-love.png"
           alt="Congratulations"

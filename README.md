@@ -17,40 +17,40 @@ Made with &hearts; by all [our awesome contributors](https://shybye.netlify.app/
 
 ## Under the Hood
 
-This is the frontend source code for the ShyBye app
+### Tech stack
 
-- [**Frontend**](https://github.com/gabw13/shybye-frontend)
-  [Next.js](https://nextjs.org) + [MUI](https://mui.com/core/)
-- [**Backend**](https://github.com/Valorieb/shybye-backend)
-  [Spring](https://spring.io/) + [PostgreSQL](https://www.postgresql.org/)
+- [Firebase](https://firebase.google.com)
+- [Next.js](https://nextjs.org)
+- [MUI](https://mui.com/core)
 
 ### Dependencies
 
-- [`@emotion/*`](https://emotion.sh/) &ndash; a core dependency of MUI and
+- [`@emotion/*`](https://emotion.sh) &ndash; a core dependency of MUI and
   provides an extensible, well-integrated CSS-in-JS solution
-- [`@mui/*`](https://mui.com/core/) &ndash; used as the primary UI library and
+- [`@mui/*`](https://mui.com/core) &ndash; used as the primary UI library and
   framework for rapid prototyping/development
-- [`axios`](https://axios-http.com/) &ndash; offers DefinitelyTyped interfaces
-  for HTTP requests to the backend
+- [`firebase`](https://firebase.google.com) &ndash; used as a single source of
+  truth for the backend architecture and other developer utilities
 - [`next`](https://nextjs.org) &ndash; a performance-driven fullstack framework
   with [several great developer features](https://github.com/gabw13/shybye-frontend/issues/9)
   to make fast apps for the web in React
-- [`react`](https://reactjs.org/), `react-dom` &ndash; state-driven, component-
+- [`react`](https://reactjs.org), `react-dom` &ndash; state-driven, component-
   based library for building the UI; the core dependency for `next` and `@mui/*`
 
 ### Running Locally
 
-#### New contributors
-
 1. Fork this repository or [request an invitation](https://discord.gg/8addqm9r4J)
    to contribute directly
-1. `git clone` &ndash; clone the repository on your local machine
-1. `npm install` &ndash; install dependencies from package.json
-1. `npm run dev` &ndash; run a local development server
+1. Clone the repository on your local machine with `git clone`
+1. Install dependencies from the "package.json" with npm: `npm install`
+1. Make sure you have the [Firebase CLI](https://firebase.google.com/docs/cli)
+   installed, or invoke it with `npx firebase $command`
+1. Enable the web frameworks preview with the CLI command
+   `firebase experiments:enable webframeworks`
+1. Run a local emulator for the Firebase app with
+   `firebase emulators:start`
 
-#### Existing contributors
-
-1. Ensure your development server isn't running (previously `npm start`) and
-   you may want to optionally clear browser data on localhost:3000
-1. `git fetch` &ndash; get the latest changes from the remote repository
-1. `npm ci` &ndash; run a clean install of the package.json dependencies
+**NOTE** the web frameworks preview is currently only compatible with
+`{ "node": "^16.0.0" || "^18.0.0" }`, included (".nvmrc") is the latest
+compatible and tested version. Ensure it's installed on your system with
+[nvm](https://github.com/nvm-sh/nvm)

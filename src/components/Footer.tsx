@@ -20,7 +20,7 @@ export default function StickyFooter() {
         }}
       >
         <Container maxWidth="sm">
-          This app was hacked by Team ShyDevs during GDI Hackathon '22! ✨
+          This app was hacked by Team ShyDevs during GDI Hackathon &apos;22! ✨
         </Container>
       </Box>
     </Box>

@@ -15,7 +15,7 @@ export default function Document() {
         {/** @todo ensure compatibility with older browsers */}
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans"
+          href="https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&display=swap"
         />
 
         {/** @todo create app manifest and icons via RealFaviconGenerator.net (when final app branding is decided) */}

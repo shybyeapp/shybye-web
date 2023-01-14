@@ -1,29 +1,23 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Learn more: https://help.github.com/articles/ignoring-files
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# node and yarn dependencies
+**/node_modules/*
+# learn more about Plug'n'Play: https://yarnpkg.com/features/pnp
+**/.pnp/*
+**/.pnp.js
+# restrict tracked files to npm
+yarn.lock
 
 # testing
-/coverage
-
-# production
-/build
+**/coverage/*
 
 # misc
+**/*-debug.log*
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Local Netlify folder
-.netlify
+# Firebase
+**/.firebase/
 
 # Next.js
-.next
+**/.next/

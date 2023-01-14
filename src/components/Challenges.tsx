@@ -1,36 +1,10 @@
-// import axios from "axios";
-
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
 import ImageList from "@mui/material/ImageList";
 
-// const BACKENDURL = "https://shy-bye-app.fly.dev";
-
 export default function Challenges() {
-  // const [allChallenges, setAllChallenges] = React.useState([]);
-  // const getAllChallenges = async () => {
-  //   await axios
-  //     .get(`${BACKENDURL}/challenges`)
-  //     .then((res) => {
-  //       console.log(res);
-  //       console.log("getting challenges");
-  //       const challengeArray = res.data.map((challenge) => {
-  //         return { challenge };
-  //       });
-  //       setAllChallenges(challengeArray);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
-  // React.useEffect(() => {
-  //   getAllChallenges();
-  // }, []);
-
   return (
-    // <ImageList sx={{ width: 500, height: 450 }}>
     <Grid container spacing={2}>
       <Grid xs={12}>
         <ImageList

@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 export default function RewardChallenge() {
   return (
     <section id="rewards">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="images/badges/fist-bump.png"
         alt="Congratulations"

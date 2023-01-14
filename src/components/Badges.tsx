@@ -9,9 +9,10 @@ export default function Badges() {
 
   return (
     <section>
-      <h1>Badges You've Earned</h1>
+      <h1>Badges You&apos;ve Earned</h1>
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid xs={12} md={4}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="images/badges/in-love.png"
             alt="love smiley face"
@@ -24,6 +25,7 @@ export default function Badges() {
           </Grid>
         </Grid>
         <Grid xs={12} md={4}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="images/badges/fist-bump.png"
             alt="fist bump"
@@ -36,6 +38,7 @@ export default function Badges() {
           </Grid>
         </Grid>
         <Grid xs={12} md={4}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="images/badges/hello.png"
             alt="hello speech bubble"

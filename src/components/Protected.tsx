@@ -13,7 +13,8 @@ export default function Protected({ children }: Props) {
 
   useEffect(() => {
     !user && router.push("/");
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   return children;
 }

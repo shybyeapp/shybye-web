@@ -49,6 +49,7 @@ export default function Home() {
         )}
       </Grid>
       <Grid item xs={12} md={6}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="images/brand/ShyBye.png" alt="ShyBye logo" className="logo" />
       </Grid>
     </Grid>
