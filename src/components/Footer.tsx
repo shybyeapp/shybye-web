@@ -1,28 +1,16 @@
+import { css } from "@emotion/react";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-export default function StickyFooter() {
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-      }}
-    >
-      <Box
-        component="footer"
-        sx={{
-          py: 2,
-          px: 2,
-          mt: "auto",
-          backgroundColor: "#FBF8EE",
-        }}
-      >
-        <Container maxWidth="sm">
-          This app was hacked by Team ShyDevs during GDI Hackathon &apos;22! ✨
-        </Container>
-      </Box>
-    </Box>
-  );
+const wrapperCss = css`
+	background-color: #fbf8ee;
+	padding: 2em;
+`;
+
+export default function Footer() {
+	return (
+		<Box component="footer" css={wrapperCss}>
+			<Typography>ShyBye &copy;2023 ✨</Typography>
+		</Box>
+	);
 }

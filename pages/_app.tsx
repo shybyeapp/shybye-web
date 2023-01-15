@@ -1,38 +1,35 @@
 import Head from "next/head";
 import type { AppProps } from "next/app";
 
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Container from "@mui/material/Container";
 
 import AuthProvider from "@/components/AuthProvider";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import "@/App.css";
+import NavigationBar from "@/components/NavigationBar";
+import theme from "@/mui-theme";
 import "@/index.css";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const theme = createTheme({
-    palette: {
-      background: { default: "#FBF8EE" },
-      primary: { main: "#77ACA2" },
-      secondary: { main: "#F4E9CD" },
-    },
-  });
-
-  return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>SHYBYE!</title>
-      </Head>
-      <ThemeProvider theme={theme}>
-        <AuthProvider>
-          <section className="App">
-            <Header />
-            <Component {...pageProps} />
-            <Footer />
-          </section>
-        </AuthProvider>
-      </ThemeProvider>
-    </>
-  );
+	return (
+		<>
+			<Head>
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<title>ShyBye</title>
+			</Head>
+			<CssBaseline />
+			<ThemeProvider theme={theme}>
+				<AuthProvider>
+					<div className="wrapper-separator">
+						<NavigationBar />
+						<Container>
+              <Component {...pageProps} />
+            </Container>
+					</div>
+					<Footer />
+				</AuthProvider>
+			</ThemeProvider>
+		</>
+	);
 }

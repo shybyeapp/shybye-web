@@ -1,57 +1,79 @@
+import { css } from "@emotion/react";
 import { useState } from "react";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 import { useAuthContext } from "@/components/AuthProvider";
-import SignIn from "@/components/SignIn";
+import PolymorphicAuthForm from "@/components/PolymorphicAuthForm";
+
+const linkCss = css`
+	text-decoration: none;
+	color: inherit;
+`;
+
+const buttonCss = css`
+	font-size: 1.33em;
+	font-weight: bold;
+	margin-top: 2em;
+`;
 
 export default function Home() {
-  const router = useRouter();
-  const { user } = useAuthContext();
-  const [open, setOpen] = useState(false);
+	const { user } = useAuthContext();
+	const [open, setOpen] = useState(false);
 
-  return (
-    <Grid
-      container
-      spacing={2}
-      alignItems="center"
-      justifyContent="center"
-      sx={{
-        fontFamily: "Inter",
-        fontSize: 32,
-        fontWeight: "bold",
-        lineHeight: 2,
-      }}
-    >
-      <br></br>
-      <Grid item xs={12}></Grid>
-      <Grid item xs={12} md={6}>
-        Complete challenges,
-        <br></br>Collect rewards, & <br></br>Reduce social anxiety
-        <br></br>
-        {user ? (
-          <Button variant="contained" onClick={() => router.push("/dashboard")}>
-            Dashboard
-          </Button>
-        ) : (
-          <Button variant="contained" onClick={() => setOpen(true)}>
-            Get started
-            <Dialog open={open} onClose={() => setOpen(false)}>
-              <DialogContent>
-                <SignIn />
-              </DialogContent>
-            </Dialog>
-          </Button>
-        )}
-      </Grid>
-      <Grid item xs={12} md={6}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="images/brand/ShyBye.png" alt="ShyBye logo" className="logo" />
-      </Grid>
-    </Grid>
-  );
+	return (
+		<>
+			<Grid
+				alignItems="center"
+				container
+				justifyContent="center"
+				marginTop="5em"
+				gridArea="App">
+				<Grid item md={5} xs={10}>
+					<Typography fontWeight="bold" textAlign="left" variant="h3">
+						The Social Anxiety Gamification App
+					</Typography>
+					<Typography textAlign="left">
+						Take tiny steps to improve your social anxiety
+					</Typography>
+					{user ? (
+						<Link css={linkCss} href="/dashboard">
+							<Button
+								color="secondary"
+								css={buttonCss}
+								variant="contained">
+								Dashboard
+							</Button>
+						</Link>
+					) : (
+						<Button
+							color="secondary"
+							css={buttonCss}
+							variant="contained"
+							onClick={() => setOpen(true)}>
+							Get started
+						</Button>
+					)}
+				</Grid>
+				<Grid item md={6} xs={10}>
+					{/* eslint-disable-next-line @next/next/no-img-element */}
+					<img
+						alt="Undraw Positive Attitude"
+						src="images/undraw/positive-attitude.svg"
+						width="100%"
+					/>
+				</Grid>
+			</Grid>
+			<Dialog open={open} onClose={() => setOpen(false)}>
+				<DialogContent>
+					<PolymorphicAuthForm />
+				</DialogContent>
+			</Dialog>
+		</>
+	);
 }

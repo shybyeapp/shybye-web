@@ -1,22 +1,23 @@
-// More libraries:  https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "firebase/app";
+
+// More libraries:  https://firebase.google.com/docs/web/setup#available-libraries
 import { getAuth } from "firebase/auth";
 
 /**
- * Initialization for the ShyBye webapp in Firebase[1].
- * Also note: it is perfectly secure[2] to make expose these credentials
- * publicly (no need to set this up in a separate .env file)
- *
- * @see [1] {@link https://console.firebase.google.com/project/shybye-465c1/settings/general Firebase console}
- * @see [2] {@link https://youtu.be/q5J5ho7YUhA?t=242 Firebase - Back to the Basics @4:02}
+ * Initialization for the ShyBye webapp in Firebase.
+ * @see {@link https://console.firebase.google.com/project/shybyeapp/settings/general Firebase console}
  */
-const app = initializeApp({
-  apiKey: "AIzaSyCPtQzECWQLHjypxjK9iBiqngubTg5cJ6A",
-  authDomain: "shybye-465c1.firebaseapp.com",
-  projectId: "shybye-465c1",
-  storageBucket: "shybye-465c1.appspot.com",
-  messagingSenderId: "1080041909067",
-  appId: "1:1080041909067:web:59623297c6548675b856ce",
-});
+const app = initializeApp(
+	{
+		apiKey: "AIzaSyBoyayUlmCH179VDnAudNU2b2RWYXF5rJE",
+		appId: "1:20034934882:web:1965611cef54f575be193b",
+		authDomain: "shybye.app",
+		measurementId: "G-68LMW0EZ0G",
+		messagingSenderId: "20034934882",
+		projectId: "shybyeapp",
+		storageBucket: "shybyeapp.appspot.com",
+	},
+	"shybye-web"
+);
 
 export const auth = getAuth(app);
