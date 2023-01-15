@@ -1,170 +1,245 @@
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+import Fab from "@mui/material/Fab";
 import Grid from "@mui/material/Grid";
-import ImageList from "@mui/material/ImageList";
+import Button from "@mui/material/Button";
 
-export default function Challenges() {
-  return (
-    <Grid container spacing={2}>
-      <Grid xs={12}>
-        <ImageList
-          sx={{
-            p: 3,
-            height: 400,
-            gridAutoFlow: "column",
-            gridTemplateColumns:
-              "repeat(auto-fill,minmax(200px,1fr)) !important",
-            gridAutoColumns: "minmax(200px, 1fr)",
-          }}
-        >
-          {itemData.map((item, index) => (
-            <Card key={index} sx={{ ml: 1, mr: 1, p: 1 }}>
-              <CardContent /> <b>{item.difficulty}</b>
-              <CardContent />
-              {item.challengeName}
-              <CardContent />
-              {item.challengeDescription}
-            </Card>
-          ))}
-        </ImageList>
-      </Grid>
-    </Grid>
-  );
+import challenges from "@/challenges.json";
+import Typography from "@mui/material/Typography";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import { css } from "@emotion/react";
+import Carousel from "@itseasy21/react-elastic-carousel";
+import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import LinearProgress from "@mui/material/LinearProgress";
+import { useState } from "react";
+
+interface ChallengeCardSetProps {
+	createSelectHandler: (challenge: (typeof challenges)[number]) => () => void;
+	filterFn?: Parameters<typeof challenges.filter>[0];
+	isUserViewable?: boolean;
+	title: string;
 }
 
-const itemData = [
-  {
-    challengeId: 1,
-    challengeName: "Smile at someone today.",
-    challengeDescription:
-      "When you pass by an aquaintance give them a smile. It will brighten their day and yours as well!",
-    challengePoints: 5,
-    difficulty: "Gentle",
-    rewardId: 1,
-  },
-  {
-    challengeId: 2,
-    challengeName: "Say hello to a friend",
-    challengeDescription:
-      "Find someone with a friendly face and say hello to them!",
-    challengePoints: 5,
-    difficulty: "Gentle",
-    rewardId: 2,
-  },
-  {
-    challengeId: 3,
-    challengeName: "Look someone in the eye",
-    challengeDescription:
-      "The next time someone talks to you, look them in the eye. Even if only for a moment!",
-    challengePoints: 5,
-    difficulty: "Gentle",
-    rewardId: 3,
-  },
-  {
-    challengeId: 4,
-    challengeName: "Ask someone how they are doing",
-    challengeDescription:
-      "Whether you are in line at the grocery store or ordering food or passing someone on the street take a moment to ask how another person is doing.",
-    challengePoints: 10,
-    difficulty: "Easy",
-    rewardId: 4,
-  },
-  {
-    challengeId: 5,
-    challengeName: "Give someone a sincere compliment",
-    challengeDescription:
-      "Give someone a compliment! You could make their day and make a friend in the process.",
-    challengePoints: 10,
-    difficulty: "Easy",
-    rewardId: 5,
-  },
-  {
-    challengeId: 6,
-    challengeName: "Ask someone for directions",
-    challengeDescription:
-      "Even if you already know the way, try this experiment and make a connection!",
-    challengePoints: 10,
-    difficulty: "Easy",
-    rewardId: 6,
-  },
-  {
-    challengeId: 7,
-    challengeName: "Have a five minute conversation with someone new",
-    challengeDescription:
-      "Get to know that friendly aquaintance better by striking up a conversation. Dont know what to talk about? Ask them what they like!",
-    challengePoints: 20,
-    difficulty: "Moderate",
-    rewardId: 7,
-  },
-  {
-    challengeId: 8,
-    challengeName: "Invite a friend to eat out",
-    challengeDescription:
-      "Invite someone you want to get to know better to eat out with you.",
-    challengePoints: 20,
-    difficulty: "Moderate",
-    rewardId: 8,
-  },
-  {
-    challengeId: 9,
-    challengeName: "Interview an elderly friend about their life",
-    challengeDescription:
-      "If you have an elderly friend get to know them better. If you do not know anyone who is elderly visit a nursing home and make a new friend.",
-    challengePoints: 20,
-    difficulty: "Moderate",
-    rewardId: 9,
-  },
-  {
-    challengeId: 10,
-    challengeName: "Host a dinner party for two to five",
-    challengeDescription: "Make dinner. Invite friends. Have fun!",
-    challengePoints: 50,
-    difficulty: "Hard",
-    rewardId: 10,
-  },
-  {
-    challengeId: 11,
-    challengeName: "Ask someone on a date",
-    challengeDescription: "Work up the courage and ask someone out!",
-    challengePoints: 50,
-    difficulty: "Hard",
-    rewardId: 11,
-  },
-  {
-    challengeId: 12,
-    challengeName:
-      "Ask a friend for a favor and then return the favor at a later time",
-    challengeDescription:
-      "Sometimes we struggle asking for help. But helping and being helped can bring a friendship to the next level.",
-    challengePoints: 50,
-    difficulty: "Hard",
-    rewardId: 12,
-  },
-  {
-    challengeId: 13,
-    challengeName: "Purposely get rejected",
-    challengeDescription:
-      "Face your fear of rejection by doing something to purposely experience rejection. Ask for an item you know is not on the menu, ask a stranger for cash, ask the Uber driver if you can drive etc. Be creative!",
-    challengePoints: 100,
-    difficulty: "Nuclear",
-    rewardId: 13,
-  },
-  {
-    challengeId: 14,
-    challengeName: "Give a speech in front of an audience",
-    challengeDescription:
-      "Face your fear of public speaking. Join a toastmasters group or other public venue and speak in front of a group of people",
-    challengePoints: 100,
-    difficulty: "Nuclear",
-    rewardId: 14,
-  },
-  {
-    challengeId: 15,
-    challengeName: "Tell your crush you like them, face-to-face",
-    challengeDescription:
-      "Have a crush but have not worked up the courage? Now is the time!",
-    challengePoints: 100,
-    difficulty: "Nuclear",
-    rewardId: 15,
-  },
-];
+const challengeCardSetCss = css`
+	padding: 2em;
+	margin-top: 1em;
+`;
+
+const challengeCardCss = css`
+	background-color: black;
+	color: white;
+	padding: 1.5em;
+	margin: 0 0.25em;
+	width: 12em;
+	height: 12em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+`;
+
+const fabWrapperCss = css`
+	display: flex;
+	align-items: center;
+`;
+
+const wrapperCss = css`
+	padding-top: 3em;
+`;
+
+const multilineTruncatedTypographyCss = css`
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	text-align: center;
+`;
+
+function ChallengeCardSet({
+	filterFn,
+	createSelectHandler,
+	isUserViewable = true,
+	title,
+}: ChallengeCardSetProps) {
+	return (
+		<>
+			<Typography fontWeight="bold" variant="h5">
+				{title} Challenges
+			</Typography>
+			<Card css={challengeCardSetCss}>
+				{isUserViewable ? (
+					<Carousel
+						breakPoints={[
+							{ width: 1, itemsToShow: 1 },
+							{ width: 350, itemsToShow: 2, itemsToScroll: 2 },
+						]}
+						isRTL={false}
+						pagination={false}
+						renderArrow={({ onClick, isEdge, type }) => (
+							<div css={fabWrapperCss}>
+								<Fab
+									color="info"
+									disabled={isEdge}
+									{...{ onClick }}>
+									{type === "NEXT" ? (
+										<MdArrowForward size="1.75em" />
+									) : (
+										<MdArrowBack size="1.75em" />
+									)}
+								</Fab>
+							</div>
+						)}>
+						{(filterFn
+							? challenges.filter(filterFn)
+							: challenges
+						).map((challenge) => {
+							const {
+								challengeId,
+								challengeName,
+								challengePoints,
+							} = challenge;
+							return (
+								<Card
+									key={challengeId}
+									css={challengeCardCss}
+									onClick={createSelectHandler(challenge)}>
+									<Typography
+										css={multilineTruncatedTypographyCss}
+										variant="h5">
+										{challengeName}
+									</Typography>
+									<Typography
+										color="#D7D7D7"
+										textAlign="center">
+										+ {challengePoints}pts
+									</Typography>
+								</Card>
+							);
+						})}
+					</Carousel>
+				) : (
+					<Grid container justifyContent="center">
+						<Grid item>
+							<Typography
+								py={5}
+								textAlign="center"
+								variant="h6"
+								width={200}>
+								<strong>Oops!</strong> You have to be a higher
+								level to view these challenges
+							</Typography>
+						</Grid>
+					</Grid>
+				)}
+			</Card>
+		</>
+	);
+}
+
+export default function Challenges() {
+	const [selected, setSelected] = useState<
+		(typeof challenges)[number] | null
+	>(null);
+
+	const createSelectHandler =
+		(challenge: (typeof challenges)[number]) => () =>
+			setSelected(challenge);
+
+	return (
+		<>
+			<div className="wrapper" css={wrapperCss}>
+				<Grid container spacing={1}>
+					<Grid
+						container
+						item
+						flex={1}
+						flexBasis="450px"
+						flexDirection="column"
+						spacing={6}>
+						{["Gentle", "Easy", "Moderate", "Hard", "Nuclear"].map(
+							(challengeDifficulty, index) => (
+								<Grid item key={challengeDifficulty}>
+									<ChallengeCardSet
+										createSelectHandler={
+											createSelectHandler
+										}
+										title={challengeDifficulty}
+										// isUserViewable={index < 1}
+										filterFn={({ difficulty }) =>
+											difficulty === challengeDifficulty
+										}
+									/>
+								</Grid>
+							)
+						)}
+					</Grid>
+					<Grid item>
+						<Typography fontWeight="bold" variant="h5">
+							Goal
+						</Typography>
+						<Card sx={{ p: 3, mt: 2 }}>
+							<Typography
+								fontWeight="bold"
+								textAlign="center"
+								variant="subtitle1">
+								Reach to the next level
+							</Typography>
+							<LinearProgress
+								sx={{ height: 12, borderRadius: 8 }}
+								value={20}
+								variant="determinate"
+							/>
+							<Typography textAlign="center" variant="caption">
+								<strong>Reward:</strong> Unlock the easy
+								challenges
+							</Typography>
+						</Card>
+					</Grid>
+				</Grid>
+			</div>
+			<Dialog
+				open={!!selected}
+				onClose={() => setSelected(null)}
+				PaperProps={{ sx: { bgcolor: "white", px: 9, py: 5 } }}>
+				<DialogContent>
+					<div
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "center",
+						}}>
+						{/* eslint-disable-next-line @next/next/no-img-element */}
+						<img
+							alt="Undraw Smiley Face"
+							src="images/undraw/smiley-face.svg"
+							width="100%"
+						/>
+						<Typography
+							pt={3}
+							fontWeight="bold"
+							textAlign="center"
+							variant="h4">
+							{selected?.challengeName}
+						</Typography>
+						<Typography textAlign="center">
+							{selected?.challengeDescription}
+						</Typography>
+						<Typography
+							fontWeight="bold"
+							pt={1}
+							textAlign="center"
+							variant="subtitle1">
+							You will earn {selected?.challengePoints}pts after
+							completion
+						</Typography>
+						<div style={{ marginTop: 40 }}>
+							<Button color="info" variant="contained">
+								Start Challenge
+							</Button>
+						</div>
+					</div>
+				</DialogContent>
+			</Dialog>
+		</>
+	);
+}

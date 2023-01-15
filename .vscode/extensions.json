@@ -1,3 +1,7 @@
 {
-  "recommendations": ["dbaeumer.vscode-eslint"]
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"styled-components.vscode-styled-components",
+		"streetsidesoftware.code-spell-checker"
+	]
 }

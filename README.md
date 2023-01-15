@@ -39,18 +39,27 @@ Made with &hearts; by all [our awesome contributors](https://shybye.netlify.app/
 
 ### Running Locally
 
+**Prerequisites**
 1. Fork this repository or [request an invitation](https://discord.gg/8addqm9r4J)
    to contribute directly
 1. Clone the repository on your local machine with `git clone`
 1. Install dependencies from the "package.json" with npm: `npm install`
 1. Make sure you have the [Firebase CLI](https://firebase.google.com/docs/cli)
-   installed, or invoke it with `npx firebase $command`
+   installed, or invoke it with `npx firebase`
 1. Enable the web frameworks preview with the CLI command
    `firebase experiments:enable webframeworks`
-1. Run a local emulator for the Firebase app with
-   `firebase emulators:start`
 
 **NOTE** the web frameworks preview is currently only compatible with
 `{ "node": "^16.0.0" || "^18.0.0" }`, included (".nvmrc") is the latest
 compatible and tested version. Ensure it's installed on your system with
 [nvm](https://github.com/nvm-sh/nvm)
+
+**Commands**
+```shell
+# Run a local emulator for the Firebase app
+firebase emulators:start
+```
+```shell
+# Run Next.js development server
+npm run dev
+```

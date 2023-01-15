@@ -5,13 +5,13 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@mui/icons-material": "^5.10.16",
+    "@itseasy21/react-elastic-carousel": "^0.12.3",
     "@mui/material": "^5.10.17",
     "firebase": "^9.14.0",
     "next": "^13.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-google-button": "^0.7.2"
+    "react-icons": "^4.7.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
