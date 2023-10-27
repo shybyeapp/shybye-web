@@ -1,9 +1,9 @@
 // import axios from "axios";
 
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
 import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
 
 // const BACKENDURL = "https://shy-bye-app.fly.dev";
 
@@ -32,25 +32,41 @@ export default function Challenges() {
   return (
     // <ImageList sx={{ width: 500, height: 450 }}>
     <Grid container spacing={2}>
-      <Grid xs={12}>
+      <Grid xs={8} >
         <ImageList
           sx={{
             p: 3,
-            height: 400,
             gridAutoFlow: "column",
             gridTemplateColumns:
-              "repeat(auto-fill,minmax(200px,1fr)) !important",
+            "repeat(auto-fill,minmax(200px,1fr)) !important",
             gridAutoColumns: "minmax(200px, 1fr)",
+            height: 300,
           }}
         >
           {itemData.map((item, index) => (
-            <Card key={index} sx={{ ml: 1, mr: 1, p: 1 }}>
-              <CardContent /> <b>{item.difficulty}</b>
-              <CardContent />
-              {item.challengeName}
-              <CardContent />
-              {item.challengeDescription}
-            </Card>
+            <ImageListItem
+              key={index}
+            >
+              <img
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                src={`${item.img}?w=248&fit=crop&auto=format`}
+                alt={item.challengeId}
+                loading="lazy"
+              />
+              <ImageListItemBar
+                sx={{
+                  alignItems: 'center',
+                  backgroundColor: '#000',
+                  color: '#fff',
+                  display: 'flex',
+                  fontFamily: "Inter",
+                  height: 100,
+                  justifyContent: 'center',
+                }}
+                title={<div>{item.challengeName}</div>}
+                position="below"
+              />
+            </ImageListItem>
           ))}
         </ImageList>
       </Grid>
@@ -67,6 +83,7 @@ const itemData = [
     challengePoints: 5,
     difficulty: "Gentle",
     rewardId: 1,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 2,
@@ -76,6 +93,7 @@ const itemData = [
     challengePoints: 5,
     difficulty: "Gentle",
     rewardId: 2,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 3,
@@ -85,6 +103,7 @@ const itemData = [
     challengePoints: 5,
     difficulty: "Gentle",
     rewardId: 3,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 4,
@@ -94,6 +113,7 @@ const itemData = [
     challengePoints: 10,
     difficulty: "Easy",
     rewardId: 4,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 5,
@@ -103,6 +123,7 @@ const itemData = [
     challengePoints: 10,
     difficulty: "Easy",
     rewardId: 5,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 6,
@@ -112,6 +133,7 @@ const itemData = [
     challengePoints: 10,
     difficulty: "Easy",
     rewardId: 6,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 7,
@@ -121,6 +143,7 @@ const itemData = [
     challengePoints: 20,
     difficulty: "Moderate",
     rewardId: 7,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 8,
@@ -130,6 +153,7 @@ const itemData = [
     challengePoints: 20,
     difficulty: "Moderate",
     rewardId: 8,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 9,
@@ -139,6 +163,7 @@ const itemData = [
     challengePoints: 20,
     difficulty: "Moderate",
     rewardId: 9,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 10,
@@ -147,6 +172,7 @@ const itemData = [
     challengePoints: 50,
     difficulty: "Hard",
     rewardId: 10,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 11,
@@ -155,6 +181,7 @@ const itemData = [
     challengePoints: 50,
     difficulty: "Hard",
     rewardId: 11,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 12,
@@ -165,6 +192,7 @@ const itemData = [
     challengePoints: 50,
     difficulty: "Hard",
     rewardId: 12,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 13,
@@ -174,6 +202,7 @@ const itemData = [
     challengePoints: 100,
     difficulty: "Nuclear",
     rewardId: 13,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 14,
@@ -183,6 +212,7 @@ const itemData = [
     challengePoints: 100,
     difficulty: "Nuclear",
     rewardId: 14,
+    img: 'images/badges/balloon.png',
   },
   {
     challengeId: 15,
@@ -192,5 +222,6 @@ const itemData = [
     challengePoints: 100,
     difficulty: "Nuclear",
     rewardId: 15,
+    img: 'images/badges/balloon.png',
   },
 ];
