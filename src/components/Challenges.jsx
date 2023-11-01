@@ -55,6 +55,21 @@ export default function Challenges(props) {
               }}
               onClick={() => console.log(`item id: ${item.challengeId}`)}
             >
+              <Typography
+                sx={{
+                  color: '#468189',
+                  fontFamily: 'Josefin Sans',
+                  fontWeight: 600,
+                  marginBottom: -3,
+                  marginLeft: 2,
+                  marginTop: 2,
+                  textAlign: 'left',
+                }}
+              >
+                {item.challengePoints > 1 ?
+                  `${item.challengePoints} pts` :
+                  `${item.challengePoints} pt`}
+              </Typography>
               <img
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                 src={`${item.img}?w=248&fit=crop&auto=format`}
