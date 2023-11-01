@@ -1,6 +1,7 @@
 import Badges from "@/components/Badges";
 import Challenges from "@/components/Challenges";
 import Progress from "@/components/Progress";
+import NextAchievement from "@/components/NextAchievement";
 import Grid from "@mui/material/Grid";
 
 export default function Dashboard() {
@@ -13,6 +14,7 @@ export default function Dashboard() {
         </Grid>
         <Grid item xs={12} md={5}>
           <Progress />
+          <NextAchievement />
         </Grid>
       </Grid>
       <Badges />
