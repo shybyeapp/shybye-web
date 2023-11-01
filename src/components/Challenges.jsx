@@ -34,7 +34,7 @@ export default function Challenges(props) {
   const { title } = props;
 
   return (
-    <Grid container spacing={2} sx={{ margin: 4 }}>
+    <Grid item>
       <Box sx={{ textAlign: 'left' }}>
         <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Josefin Sans' }}>
           {title}
