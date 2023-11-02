@@ -50,7 +50,7 @@ export default function Challenges(props) {
         >
           {itemData.map((item, index) => (
             <Link
-              href={`/challengeDetails/${item.challengeId}`}
+              href={`/challengeDetail/${item.challengeId}`}
               style={{ textDecoration: "none" }}
               onClick={() => setData(item)}
             >
