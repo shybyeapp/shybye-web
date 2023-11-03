@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link";
 import styled from "styled-components";
 import { ImageListItem, Button } from "@mui/material";
 
@@ -28,19 +29,22 @@ const Challenge = (props) => {
           You will earn <b>{challenge.challengePoints} courage points</b> upon completion
         </PointsToGet>
       </ContentBox>
-      <Button
-        variant="contained"
-        sx={{
-          backgroundColor: '#468189',
-          color: '#fff',
-          fontFamily: 'Josefin Sans',
-          fontSize: 18,
-          height: 64,
-          textTransform: "none",
-          width: 310,
-        }}>
-        Start Challenge
-      </Button>
+      <Link href="/started">
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: '#468189',
+            color: '#fff',
+            fontFamily: 'Josefin Sans',
+            fontSize: 18,
+            height: 64,
+            textTransform: "none",
+            width: 310,
+            margin: 2,
+          }}>
+          Start Challenge
+        </Button>
+      </Link>
     </DetailContainer>
   )
 }
