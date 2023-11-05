@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
+import StatusBox from './StatusBox';
 
 const Progress = () => {
   return (
@@ -39,7 +40,9 @@ const Progress = () => {
             </ProgressBarBox>
           </ProfileBox>
           <StatusContainer>
-            Status Container
+            <StatusBox img={'badge'} title={'Medals Earned'}/>
+            <StatusBox img={'streak'} title={'Daily Streak'}/>
+            <StatusBox img={'dino'} title={'Challenges Completed'}/>
           </StatusContainer>
         </ProgressBox>
       </ProgressContainer>
@@ -155,7 +158,6 @@ const StatusContainer = styled.div`
   border-bottom-right-radius: 5px;
   border-top: none;
   display: flex;
-  flex-direction: column;
   height: 120px;
   justify-content: space-around;
   width: 400px;
