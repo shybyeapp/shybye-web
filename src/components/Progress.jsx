@@ -25,18 +25,18 @@ const Progress = () => {
               <EditLink>Edit Profile</EditLink>
             </ProfilePicBox>
 
-            <ProgressBar>
+            <ProgressBarBox>
               <LevelBox>
                 <LevelText>Level</LevelText>
                 <Level>0</Level>
               </LevelBox>
-              <Bar>
-                <div>Bar</div>
-              </Bar>
+              <BarBox>
+                <ProgressBar max="100" value="80" />
+              </BarBox>
               <PointsBox>
                 <Points>0/5 pts</Points>
               </PointsBox>
-            </ProgressBar>
+            </ProgressBarBox>
           </ProfileBox>
           <StatusContainer>
             Status Container
@@ -88,12 +88,12 @@ const EditLink = styled.p`
   text-decoration: underline
 `;
 
-const ProgressBar = styled.div`
+const ProgressBarBox = styled.div`
   align-items: center;
   display: flex;
   height: 80px;
   justify-content: space-around;
-  width: 380px;
+  width: 360px;
 `;
 
 const LevelBox = styled.div`
@@ -112,13 +112,30 @@ const Level = styled.div`
   font-size: 36px;
 `;
 
-const Bar = styled.div`
+const BarBox = styled.div`
   align-items: center;
-  border: 1px solid #DFDFDF;
   display: flex;
   height: 60px;
   justify-content: center;
-  width: 200px;
+  width: 300px;
+`;
+
+const ProgressBar = styled.progress`
+  appearance: none;
+  width: 90%;
+  height: 30px;
+  border-radius: 20px;
+  &::-webkit-progress-bar {
+    border-radius: 20px;
+  }
+  &::-webkit-progress-value {
+    background-color: #9DBEBB;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+  &::-moz-progress-bar {
+    background-color: #9DBEBB;
+  }
 `;
 
 const PointsBox = styled.div`
