@@ -34,6 +34,14 @@ export default function App({ Component, pageProps }) {
       primary: { main: "#77ACA2" },
       secondary: { main: "#F4E9CD" },
     },
+    components: {
+      MuiImageListItemBar: {
+        styleOverrides: {
+          title: {
+            whiteSpace: 'inherit'          }
+        }
+      }
+    }
   });
 
   return (

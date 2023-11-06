@@ -1,13 +1,15 @@
 // import axios from "axios";
 
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
 import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 // const BACKENDURL = "https://shy-bye-app.fly.dev";
 
-export default function Challenges() {
+export default function Challenges(props) {
   // const [allChallenges, setAllChallenges] = React.useState([]);
   // const getAllChallenges = async () => {
   //   await axios
@@ -29,28 +31,68 @@ export default function Challenges() {
   //   getAllChallenges();
   // }, []);
 
+  const { title } = props;
+
   return (
-    // <ImageList sx={{ width: 500, height: 450 }}>
-    <Grid container spacing={2}>
+    <Grid item>
+      <Box sx={{ textAlign: 'left' }}>
+        <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Josefin Sans' }}>
+          {title}
+        </Typography>
+      </ Box>
       <Grid xs={12}>
         <ImageList
-          sx={{
-            p: 3,
-            height: 400,
-            gridAutoFlow: "column",
-            gridTemplateColumns:
-              "repeat(auto-fill,minmax(200px,1fr)) !important",
-            gridAutoColumns: "minmax(200px, 1fr)",
-          }}
+          sx={{ maxHeight: 600 }} cols={3}
         >
           {itemData.map((item, index) => (
-            <Card key={index} sx={{ ml: 1, mr: 1, p: 1 }}>
-              <CardContent /> <b>{item.difficulty}</b>
-              <CardContent />
-              {item.challengeName}
-              <CardContent />
-              {item.challengeDescription}
-            </Card>
+            <ImageListItem
+              key={index}
+              sx={{
+                borderRadius: 3,
+                boxShadow: 4,
+                margin: 1,
+                maxWidth: 300,
+              }}
+              onClick={() => console.log(`item id: ${item.challengeId}`)}
+            >
+              <Typography
+                sx={{
+                  color: '#468189',
+                  fontFamily: 'Josefin Sans',
+                  fontWeight: 600,
+                  marginBottom: -3,
+                  marginLeft: 2,
+                  marginTop: 2,
+                  textAlign: 'left',
+                }}
+              >
+                {item.challengePoints > 1 ?
+                  `${item.challengePoints} pts` :
+                  `${item.challengePoints} pt`}
+              </Typography>
+              <img
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                src={`${item.img}?w=248&fit=crop&auto=format`}
+                alt={item.challengeId}
+                loading="lazy"
+              />
+              <ImageListItemBar
+                sx={{
+                  alignItems: 'center',
+                  backgroundColor: '#DFE1B2',
+                  borderBottomLeftRadius: 3,
+                  borderBottomRightRadius: 3,
+                  color: '#000',
+                  display: 'flex',
+                  fontFamily: 'Josefin Sans',
+                  height: 90,
+                  justifyContent: 'center',
+                  padding: 2
+                }}
+                title={<div>{item.challengeName}</div>}
+                position="below"
+              />
+            </ImageListItem>
           ))}
         </ImageList>
       </Grid>
@@ -67,6 +109,7 @@ const itemData = [
     challengePoints: 5,
     difficulty: "Gentle",
     rewardId: 1,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 2,
@@ -76,6 +119,7 @@ const itemData = [
     challengePoints: 5,
     difficulty: "Gentle",
     rewardId: 2,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 3,
@@ -85,6 +129,7 @@ const itemData = [
     challengePoints: 5,
     difficulty: "Gentle",
     rewardId: 3,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 4,
@@ -94,6 +139,7 @@ const itemData = [
     challengePoints: 10,
     difficulty: "Easy",
     rewardId: 4,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 5,
@@ -103,6 +149,7 @@ const itemData = [
     challengePoints: 10,
     difficulty: "Easy",
     rewardId: 5,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 6,
@@ -112,6 +159,7 @@ const itemData = [
     challengePoints: 10,
     difficulty: "Easy",
     rewardId: 6,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 7,
@@ -121,6 +169,7 @@ const itemData = [
     challengePoints: 20,
     difficulty: "Moderate",
     rewardId: 7,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 8,
@@ -130,6 +179,7 @@ const itemData = [
     challengePoints: 20,
     difficulty: "Moderate",
     rewardId: 8,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 9,
@@ -139,6 +189,7 @@ const itemData = [
     challengePoints: 20,
     difficulty: "Moderate",
     rewardId: 9,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 10,
@@ -147,6 +198,7 @@ const itemData = [
     challengePoints: 50,
     difficulty: "Hard",
     rewardId: 10,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 11,
@@ -155,6 +207,7 @@ const itemData = [
     challengePoints: 50,
     difficulty: "Hard",
     rewardId: 11,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 12,
@@ -165,6 +218,7 @@ const itemData = [
     challengePoints: 50,
     difficulty: "Hard",
     rewardId: 12,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 13,
@@ -174,6 +228,7 @@ const itemData = [
     challengePoints: 100,
     difficulty: "Nuclear",
     rewardId: 13,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 14,
@@ -183,6 +238,7 @@ const itemData = [
     challengePoints: 100,
     difficulty: "Nuclear",
     rewardId: 14,
+    img: 'images/challenges/direction.png',
   },
   {
     challengeId: 15,
@@ -192,5 +248,6 @@ const itemData = [
     challengePoints: 100,
     difficulty: "Nuclear",
     rewardId: 15,
+    img: 'images/challenges/direction.png',
   },
 ];
