@@ -6,6 +6,9 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Link from "next/link";
+import { useChallengeContext } from "../../ChallengeContext.js"
+
 
 // const BACKENDURL = "https://shy-bye-app.fly.dev";
 
@@ -32,6 +35,7 @@ export default function Challenges(props) {
   // }, []);
 
   const { title } = props;
+  const { setData } = useChallengeContext()
 
   return (
     <Grid item>
@@ -45,54 +49,59 @@ export default function Challenges(props) {
           sx={{ maxHeight: 600 }} cols={3}
         >
           {itemData.map((item, index) => (
-            <ImageListItem
-              key={index}
-              sx={{
-                borderRadius: 3,
-                boxShadow: 4,
-                margin: 1,
-                maxWidth: 300,
-              }}
-              onClick={() => console.log(`item id: ${item.challengeId}`)}
+            <Link
+              href={`/challengeDetail/${item.challengeId}`}
+              style={{ textDecoration: "none" }}
+              onClick={() => setData(item)}
             >
-              <Typography
+              <ImageListItem
+                key={index}
                 sx={{
-                  color: '#468189',
-                  fontFamily: 'Josefin Sans',
-                  fontWeight: 600,
-                  marginBottom: -3,
-                  marginLeft: 2,
-                  marginTop: 2,
-                  textAlign: 'left',
+                  borderRadius: 3,
+                  boxShadow: 4,
+                  margin: 1,
+                  maxWidth: 300,
                 }}
               >
-                {item.challengePoints > 1 ?
-                  `${item.challengePoints} pts` :
-                  `${item.challengePoints} pt`}
-              </Typography>
-              <img
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                alt={item.challengeId}
-                loading="lazy"
-              />
-              <ImageListItemBar
-                sx={{
-                  alignItems: 'center',
-                  backgroundColor: '#DFE1B2',
-                  borderBottomLeftRadius: 3,
-                  borderBottomRightRadius: 3,
-                  color: '#000',
-                  display: 'flex',
-                  fontFamily: 'Josefin Sans',
-                  height: 90,
-                  justifyContent: 'center',
-                  padding: 2
-                }}
-                title={<div>{item.challengeName}</div>}
-                position="below"
-              />
-            </ImageListItem>
+                <Typography
+                  sx={{
+                    color: '#468189',
+                    fontFamily: 'Josefin Sans',
+                    fontWeight: 600,
+                    marginBottom: -3,
+                    marginLeft: 2,
+                    marginTop: 2,
+                    textAlign: 'left',
+                  }}
+                >
+                  {item.challengePoints > 1 ?
+                    `${item.challengePoints} pts` :
+                    `${item.challengePoints} pt`}
+                </Typography>
+                <img
+                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  src={`${item.img}?w=248&fit=crop&auto=format`}
+                  alt={item.challengeId}
+                  loading="lazy"
+                />
+                <ImageListItemBar
+                  sx={{
+                    alignItems: 'center',
+                    backgroundColor: '#DFE1B2',
+                    borderBottomLeftRadius: 3,
+                    borderBottomRightRadius: 3,
+                    color: '#000',
+                    display: 'flex',
+                    fontFamily: 'Josefin Sans',
+                    height: 90,
+                    justifyContent: 'center',
+                    padding: 2
+                  }}
+                  title={<div>{item.challengeName}</div>}
+                  position="below"
+                />
+              </ImageListItem>
+            </Link>
           ))}
         </ImageList>
       </Grid>

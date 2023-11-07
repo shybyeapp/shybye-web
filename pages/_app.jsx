@@ -8,6 +8,8 @@ import Header from "@/components/Header";
 import "@/App.css";
 import "@/index.css";
 
+import { ChallengeProvider } from '../ChallengeContext.js';
+
 /** @type {(AppProps: import("next/app").AppProps) => JSX.Element} */
 export default function App({ Component, pageProps }) {
   // const BACKENDURL = "https://shy-bye-app.fly.dev";
@@ -38,7 +40,8 @@ export default function App({ Component, pageProps }) {
       MuiImageListItemBar: {
         styleOverrides: {
           title: {
-            whiteSpace: 'inherit'          }
+            whiteSpace: 'inherit'
+          }
         }
       }
     }
@@ -53,7 +56,9 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <section className="App">
           <Header />
-          <Component {...pageProps} />
+          <ChallengeProvider>
+            <Component {...pageProps} />
+          </ChallengeProvider>
           <Footer />
         </section>
       </ThemeProvider>
