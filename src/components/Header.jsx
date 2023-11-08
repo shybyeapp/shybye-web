@@ -28,22 +28,22 @@ export default function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography variant="h6" component="div">
-            Shybye
+          <Typography component="div">
+            ShyBye
           </Typography>
-          <Stack spacing={2} direction="row" justifyContent="center" alignItems="center">
+          <Stack spacing={2} direction="row" justifyContent="center" alignItems="center" >
             <Link href="/dashboard">
-              <Button variant="h6" color="inherit" sx={{ textTransform: "none" }}>
+              <Button size="large" color="inherit" sx={{ textTransform: "none" }}>
                 Dashboard
               </Button>
             </Link>
             <Link href="/">
-              <Button variant="h6" color="inherit" sx={{ textTransform: "none" }}>
+              <Button size="large" color="inherit" sx={{ textTransform: "none" }}>
                 Resources
               </Button>
             </Link>
             <Link href="/">
-              <Button variant="h6" color="inherit" sx={{ textTransform: "none" }}>
+              <Button size="large" color="inherit" sx={{ textTransform: "none" }}>
                 Achievements
               </Button>
             </Link>
@@ -72,9 +72,9 @@ export default function Header() {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={handleClose} sx={{ marginRight: 6 }}>
                 <IconButton
-                  size="large"
+                  size="medium"
                   aria-label="account of current user"
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
@@ -84,9 +84,9 @@ export default function Header() {
                 </IconButton>
                 Settings
               </MenuItem>
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={handleClose} sx={{ marginRight: 6 }}>
                 <IconButton
-                  size="large"
+                  size="medium"
                   aria-label="account of current user"
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
@@ -96,9 +96,9 @@ export default function Header() {
                 </IconButton>
                 View Profile
               </MenuItem>
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={handleClose} sx={{ marginRight: 6 }}>
                 <IconButton
-                  size="large"
+                  size="medium"
                   aria-label="account of current user"
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
