@@ -31,6 +31,9 @@ export default function App({ Component, pageProps }) {
   // };
 
   const theme = createTheme({
+    typography: {
+      fontFamily: "Josefin Sans",
+    },
     palette: {
       background: { default: "#FBF8EE" },
       primary: { main: "#77ACA2" },

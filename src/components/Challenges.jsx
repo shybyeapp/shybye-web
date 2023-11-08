@@ -40,7 +40,7 @@ export default function Challenges(props) {
   return (
     <Grid item>
       <Box sx={{ textAlign: 'left' }}>
-        <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Josefin Sans' }}>
+        <Typography variant="h4" gutterBottom>
           {title}
         </Typography>
       </ Box>
@@ -66,7 +66,6 @@ export default function Challenges(props) {
                 <Typography
                   sx={{
                     color: '#468189',
-                    fontFamily: 'Josefin Sans',
                     fontWeight: 600,
                     marginBottom: -3,
                     marginLeft: 2,
@@ -92,7 +91,6 @@ export default function Challenges(props) {
                     borderBottomRightRadius: 3,
                     color: '#000',
                     display: 'flex',
-                    fontFamily: 'Josefin Sans',
                     height: 90,
                     justifyContent: 'center',
                     padding: 2

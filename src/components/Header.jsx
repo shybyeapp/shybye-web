@@ -1,14 +1,16 @@
 import { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
-
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
-import Stack from "@mui/material/Stack";
-import Toolbar from "@mui/material/Toolbar";
+import {
+  AppBar, 
+  Box, 
+  Button,
+  Dialog,
+  DialogContent,
+  Stack,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 
 import SignIn from "@/components/SignIn";
 
@@ -34,7 +36,10 @@ export default function Header() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Typography variant="h6" component="div">
+            shybye
+          </Typography>
           <Stack spacing={2} direction="row" justifyContent="center">
             <Link href="/" style={{ textDecoration: "none" }}>
               <Button color="inherit">Home</Button>
@@ -45,19 +50,19 @@ export default function Header() {
             <Link href="/research" style={{ textDecoration: "none" }}>
               <Button color="inherit">Research</Button>
             </Link>
+            <Button color="inherit" onClick={handleClickOpen}>
+              Sign In
+              <Dialog open={open} onClose={handleClose}>
+                <DialogContent>
+                  <SignIn
+                    handleClose={handleClose}
+                    open={open}
+                    getUserCallback={getUserData}
+                  />
+                </DialogContent>
+              </Dialog>
+            </Button>
           </Stack>
-          <Button color="inherit" onClick={handleClickOpen}>
-            Sign In
-            <Dialog open={open} onClose={handleClose}>
-              <DialogContent>
-                <SignIn
-                  handleClose={handleClose}
-                  open={open}
-                  getUserCallback={getUserData}
-                />
-              </DialogContent>
-            </Dialog>
-          </Button>
         </Toolbar>
       </AppBar>
     </Box>

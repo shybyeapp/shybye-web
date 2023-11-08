@@ -20,7 +20,7 @@ const Progress = () => {
         <AchievementBox>
           <TitleBox>
             <Box>
-              <Typography variant="h5" sx={{ fontFamily: 'Josefin Sans' }}>
+              <Typography variant="h5">
                 Next Achievement
               </Typography>
             </Box>
