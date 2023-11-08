@@ -1,36 +1,27 @@
 import { useState } from "react";
 import Link from "next/link";
-import axios from "axios";
 import {
   AppBar,
   Box,
   Button,
-  Dialog,
-  DialogContent,
   Stack,
   Toolbar,
   Typography,
+  IconButton,
+  Menu,
+  MenuItem,
 } from "@mui/material";
-
-import SignIn from "@/components/SignIn";
-
-const BACKENDURL = "https://shy-bye-app.fly.dev";
+import { AccountCircle, Settings, Logout } from '@mui/icons-material';
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
-  const handleClickOpen = () => void setOpen(true);
-  const handleClose = () => void setOpen(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const getUserData = (userInfo) => {
-    axios
-      .get(`${BACKENDURL}/login`, userInfo)
-      .then((res) => {
-        console.log(res);
-        console.log("logging user in");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
@@ -40,7 +31,7 @@ export default function Header() {
           <Typography variant="h6" component="div">
             Shybye
           </Typography>
-          <Stack spacing={2} direction="row" justifyContent="center">
+          <Stack spacing={2} direction="row" justifyContent="center" alignItems="center">
             <Link href="/dashboard">
               <Button variant="h6" color="inherit" sx={{ textTransform: "none" }}>
                 Dashboard
@@ -56,23 +47,68 @@ export default function Header() {
                 Achievements
               </Button>
             </Link>
-            <Button
-              variant="h6"
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
               color="inherit"
-              sx={{ textTransform: "none" }}
-              onClick={handleClickOpen}
             >
-              Sign In
-              <Dialog open={open} onClose={handleClose}>
-                <DialogContent>
-                  <SignIn
-                    handleClose={handleClose}
-                    open={open}
-                    getUserCallback={getUserData}
-                  />
-                </DialogContent>
-              </Dialog>
-            </Button>
+              <AccountCircle />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  color="inherit"
+                >
+                  <Settings />
+                </IconButton>
+                Settings
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  color="inherit"
+                >
+                  <AccountCircle />
+                </IconButton>
+                View Profile
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  color="inherit"
+                >
+                  <Logout />
+                </IconButton>
+                Logout
+              </MenuItem>
+            </Menu>
           </Stack>
         </Toolbar>
       </AppBar>
