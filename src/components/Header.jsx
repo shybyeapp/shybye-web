@@ -2,8 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
 import {
-  AppBar, 
-  Box, 
+  AppBar,
+  Box,
   Button,
   Dialog,
   DialogContent,
@@ -38,19 +38,30 @@ export default function Header() {
       <AppBar position="static">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography variant="h6" component="div">
-            shybye
+            Shybye
           </Typography>
           <Stack spacing={2} direction="row" justifyContent="center">
-            <Link href="/" style={{ textDecoration: "none" }}>
-              <Button color="inherit">Home</Button>
+            <Link href="/dashboard">
+              <Button variant="h6" color="inherit" sx={{ textTransform: "none" }}>
+                Dashboard
+              </Button>
             </Link>
-            <Link href="/about" style={{ textDecoration: "none" }}>
-              <Button color="inherit">About</Button>
+            <Link href="/">
+              <Button variant="h6" color="inherit" sx={{ textTransform: "none" }}>
+                Resources
+              </Button>
             </Link>
-            <Link href="/research" style={{ textDecoration: "none" }}>
-              <Button color="inherit">Research</Button>
+            <Link href="/">
+              <Button variant="h6" color="inherit" sx={{ textTransform: "none" }}>
+                Achievements
+              </Button>
             </Link>
-            <Button color="inherit" onClick={handleClickOpen}>
+            <Button
+              variant="h6"
+              color="inherit"
+              sx={{ textTransform: "none" }}
+              onClick={handleClickOpen}
+            >
               Sign In
               <Dialog open={open} onClose={handleClose}>
                 <DialogContent>
