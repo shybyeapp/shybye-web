@@ -1,63 +1,115 @@
 import { useState } from "react";
 import Link from "next/link";
-import axios from "axios";
-
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
-import Stack from "@mui/material/Stack";
-import Toolbar from "@mui/material/Toolbar";
-
-import SignIn from "@/components/SignIn";
-
-const BACKENDURL = "https://shy-bye-app.fly.dev";
+import {
+  AppBar,
+  Box,
+  Button,
+  Stack,
+  Toolbar,
+  Typography,
+  IconButton,
+  Menu,
+  MenuItem,
+} from "@mui/material";
+import { AccountCircle, Settings, Logout } from '@mui/icons-material';
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
-  const handleClickOpen = () => void setOpen(true);
-  const handleClose = () => void setOpen(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const getUserData = (userInfo) => {
-    axios
-      .get(`${BACKENDURL}/login`, userInfo)
-      .then((res) => {
-        console.log(res);
-        console.log("logging user in");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <Stack spacing={2} direction="row" justifyContent="center">
-            <Link href="/" style={{ textDecoration: "none" }}>
-              <Button color="inherit">Home</Button>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Typography component="div">
+            ShyBye
+          </Typography>
+          <Stack spacing={2} direction="row" justifyContent="center" alignItems="center" >
+            <Link href="/dashboard">
+              <Button size="large" color="inherit" sx={{ textTransform: "none" }}>
+                Dashboard
+              </Button>
             </Link>
-            <Link href="/about" style={{ textDecoration: "none" }}>
-              <Button color="inherit">About</Button>
+            <Link href="/">
+              <Button size="large" color="inherit" sx={{ textTransform: "none" }}>
+                Resources
+              </Button>
             </Link>
-            <Link href="/research" style={{ textDecoration: "none" }}>
-              <Button color="inherit">Research</Button>
+            <Link href="/">
+              <Button size="large" color="inherit" sx={{ textTransform: "none" }}>
+                Achievements
+              </Button>
             </Link>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+            >
+              <AccountCircle />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose} sx={{ marginRight: 6 }}>
+                <IconButton
+                  size="medium"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  color="inherit"
+                >
+                  <Settings />
+                </IconButton>
+                Settings
+              </MenuItem>
+              <MenuItem onClick={handleClose} sx={{ marginRight: 6 }}>
+                <IconButton
+                  size="medium"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  color="inherit"
+                >
+                  <AccountCircle />
+                </IconButton>
+                View Profile
+              </MenuItem>
+              <MenuItem onClick={handleClose} sx={{ marginRight: 6 }}>
+                <IconButton
+                  size="medium"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  color="inherit"
+                >
+                  <Logout />
+                </IconButton>
+                Logout
+              </MenuItem>
+            </Menu>
           </Stack>
-          <Button color="inherit" onClick={handleClickOpen}>
-            Sign In
-            <Dialog open={open} onClose={handleClose}>
-              <DialogContent>
-                <SignIn
-                  handleClose={handleClose}
-                  open={open}
-                  getUserCallback={getUserData}
-                />
-              </DialogContent>
-            </Dialog>
-          </Button>
         </Toolbar>
       </AppBar>
     </Box>

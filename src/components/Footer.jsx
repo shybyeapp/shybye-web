@@ -10,7 +10,8 @@ export default function StickyFooter() {
         px: 2,
         mt: "auto",
         backgroundColor: "#FBF8EE",
-        marginTop: 5,
+        marginTop: '45vh',
+        height: '2.5vh',
       }}
     >
       <Container maxWidth="sm">

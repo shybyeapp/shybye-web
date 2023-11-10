@@ -27,7 +27,6 @@ const Splash = () => {
           sx={{
             backgroundColor: '#468189',
             color: '#fff',
-            fontFamily: 'Josefin Sans',
             fontSize: 18,
             height: 64,
             textTransform: "none",
