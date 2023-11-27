@@ -10,11 +10,7 @@ const Progress = () => {
       item
       xs={12}
       md={12}
-      sx={{
-        minWidth: 420,
-        minHeight: 240,
-        marginTop: 10
-      }}
+      sx={{ marginTop: 10 }}
     >
       <AchievementContainer>
         <AchievementBox>
@@ -57,7 +53,6 @@ const TitleBox = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
-  min-width: 420px;
 `;
 
 const MedalBox = styled.div`
@@ -65,7 +60,7 @@ const MedalBox = styled.div`
   height: 210px;
   justify-content: center;
   margin-top: 20px;
-  width: 420px;
+  min-width: 400px;
 `;
 
 const ViewAllLink = styled.div`
