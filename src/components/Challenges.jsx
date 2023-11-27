@@ -1,14 +1,10 @@
 // import axios from "axios";
 
 import Grid from "@mui/material/Grid";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { ImageList, ImageListItem, ImageListItemBar, Box, Typography } from "@mui/material";
+import { styled } from '@mui/system';
 import Link from "next/link";
 import { useChallengeContext } from "../../ChallengeContext.js"
-
 
 // const BACKENDURL = "https://shy-bye-app.fly.dev";
 
@@ -36,6 +32,15 @@ export default function Challenges(props) {
 
   const { title } = props;
   const { setData } = useChallengeContext()
+
+  const EllipsisText = styled('div')({
+    display: '-webkit-box',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 3,
+    whiteSpace: 'normal',
+  });
 
   return (
     <Grid item>
@@ -90,12 +95,11 @@ export default function Challenges(props) {
                     borderBottomLeftRadius: 3,
                     borderBottomRightRadius: 3,
                     color: '#000',
-                    display: 'flex',
                     height: 90,
-                    justifyContent: 'center',
-                    padding: 2
+                    padding: 2,
                   }}
-                  title={<div>{item.challengeName}</div>}
+
+                  title={<EllipsisText>{item.challengeName}</EllipsisText>}
                   position="below"
                 />
               </ImageListItem>
