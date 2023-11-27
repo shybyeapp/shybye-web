@@ -49,7 +49,7 @@ export default function Challenges(props) {
           {title}
         </Typography>
       </ Box>
-      <Grid xs={12}>
+      <Grid item>
         <ImageList
           sx={{ maxHeight: 600 }} cols={3}
         >

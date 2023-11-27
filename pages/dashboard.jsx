@@ -7,7 +7,15 @@ import Grid from "@mui/material/Grid";
 export default function Dashboard() {
   return (
     <>
-      <Grid container spacing={4} sx={{ marginTop: 10, paddingLeft: 10, paddingRight: 10 }}>
+      <Grid
+        container
+        spacing={4}
+        sx={{
+          marginTop: 10,
+          paddingLeft: 5,
+          paddingRight: 5
+        }}
+      >
         <Grid item xs={12} md={7}>
           <Challenges title={'My Challenges'} />
           <Challenges title={'Browse Challenges'} />

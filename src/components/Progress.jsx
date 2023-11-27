@@ -10,8 +10,8 @@ const Progress = () => {
       xs={12}
       md={12}
       sx={{
-        minWidth: 420,
-        minHeight: 510,
+        maxWidth: 420,
+        maxHeight: 510,
       }}
     >
       <ProgressContainer>
