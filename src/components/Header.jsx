@@ -11,7 +11,7 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-import { AccountCircle, Settings, Logout } from '@mui/icons-material';
+import { AccountCircle, Settings, Logout } from "@mui/icons-material";
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -28,22 +28,37 @@ export default function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography component="div">
-            ShyBye
-          </Typography>
-          <Stack spacing={2} direction="row" justifyContent="center" alignItems="center" >
+          <Typography component="div">ShyBye</Typography>
+          <Stack
+            spacing={2}
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
             <Link href="/dashboard">
-              <Button size="large" color="inherit" sx={{ textTransform: "none" }}>
+              <Button
+                size="large"
+                color="inherit"
+                sx={{ textTransform: "none" }}
+              >
                 Dashboard
               </Button>
             </Link>
             <Link href="/">
-              <Button size="large" color="inherit" sx={{ textTransform: "none" }}>
+              <Button
+                size="large"
+                color="inherit"
+                sx={{ textTransform: "none" }}
+              >
                 Resources
               </Button>
             </Link>
             <Link href="/">
-              <Button size="large" color="inherit" sx={{ textTransform: "none" }}>
+              <Button
+                size="large"
+                color="inherit"
+                sx={{ textTransform: "none" }}
+              >
                 Achievements
               </Button>
             </Link>
@@ -61,13 +76,13 @@ export default function Header() {
               id="menu-appbar"
               anchorEl={anchorEl}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               open={Boolean(anchorEl)}
               onClose={handleClose}

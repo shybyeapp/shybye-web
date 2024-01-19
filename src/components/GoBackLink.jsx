@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import Link from "next/link";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 import styled from "styled-components";
 
-const GoBackLink = () => {
+export default function GoBackLink() {
   return (
     <Link href={`/dashboard`} style={{ textDecoration: "none" }}>
       <BackLinkContainer>
@@ -16,7 +16,7 @@ const GoBackLink = () => {
         </BackLinkBox>
       </BackLinkContainer>
     </Link>
-  )
+  );
 }
 
 const BackLinkContainer = styled.div`
@@ -30,5 +30,3 @@ const BackLinkContainer = styled.div`
 const BackLinkBox = styled.div`
   margin: 10px;
 `;
-
-export default GoBackLink

@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { ImageListItem, Button } from "@mui/material";
 
-const Challenge = (props) => {
-  const { challenge } = props
+export default function Challenge(props) {
+  const { challenge } = props;
 
   return (
     <DetailContainer>
@@ -21,31 +21,31 @@ const Challenge = (props) => {
       <ContentBox>
         <ChallengeName>{challenge.challengeName}</ChallengeName>
         <CompletedNum>Completed 0 times</CompletedNum>
-        <Description>
-          {challenge.challengeDescription}
-        </Description>
+        <Description>{challenge.challengeDescription}</Description>
         <TipBox>Tip</TipBox>
         <PointsToGet>
-          You will earn <b>{challenge.challengePoints} courage points</b> upon completion
+          You will earn <b>{challenge.challengePoints} courage points</b> upon
+          completion
         </PointsToGet>
       </ContentBox>
       <Link href="/started">
         <Button
           variant="contained"
           sx={{
-            backgroundColor: '#468189',
-            color: '#fff',
+            backgroundColor: "#468189",
+            color: "#fff",
             fontSize: 18,
             height: 64,
             textTransform: "none",
             width: 310,
             margin: 2,
-          }}>
+          }}
+        >
           Start Challenge
         </Button>
       </Link>
     </DetailContainer>
-  )
+  );
 }
 
 const DetailContainer = styled.div`
@@ -87,7 +87,7 @@ const Description = styled.div`
 `;
 
 const TipBox = styled.div`
-  background-color: #BFC364;
+  background-color: #bfc364;
   border-radius: 5px;
   line-height: 28px;
   margin-bottom: 16px;
@@ -102,5 +102,3 @@ const PointsToGet = styled.div`
   margin-top: 16px;
   text-align: center;
 `;
-
-export default Challenge

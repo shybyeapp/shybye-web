@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
-const StatusBox = (props) => {
+export default function StatusBox(props) {
   const { img, title } = props;
 
   return (
     <StatusContainer>
       <StatusWrapper>
         <ImgBox>
-          <img
-            src={`../../../images/status/${img}.png`}
-          />
+          <img src={`../../../images/status/${img}.png`} />
         </ImgBox>
         <Score>0</Score>
       </StatusWrapper>
@@ -17,7 +15,7 @@ const StatusBox = (props) => {
         <Text>{title}</Text>
       </TitleWrapper>
     </StatusContainer>
-  )
+  );
 }
 
 const StatusContainer = styled.div`
@@ -59,5 +57,3 @@ const TitleWrapper = styled.div`
 const Text = styled.p`
   font-size: 1em;
 `;
-
-export default StatusBox

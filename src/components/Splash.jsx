@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { ImageListItem, Button } from "@mui/material";
-import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
+import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
 
-const Splash = () => {
+export default function Splash() {
   return (
     <DetailContainer>
       <ImageBox>
@@ -12,7 +12,7 @@ const Splash = () => {
           <img
             srcSet={`../../images/challenges/startedDino.png?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
             src={`../../images/challenges/startedDino.png?w=164&h=164&fit=crop&auto=format`}
-            alt='qweq'
+            alt="qweq"
             loading="lazy"
           />
         </ImageListItem>
@@ -25,14 +25,15 @@ const Splash = () => {
         <Button
           variant="contained"
           sx={{
-            backgroundColor: '#468189',
-            color: '#fff',
+            backgroundColor: "#468189",
+            color: "#fff",
             fontSize: 18,
             height: 64,
             textTransform: "none",
             width: 420,
             margin: 2,
-          }}>
+          }}
+        >
           <IconBox>
             <SpaceDashboardIcon />
           </IconBox>
@@ -40,7 +41,7 @@ const Splash = () => {
         </Button>
       </Link>
     </DetailContainer>
-  )
+  );
 }
 
 const DetailContainer = styled.div`
@@ -80,5 +81,3 @@ const IconBox = styled.span`
   margin-right: 12px;
   margin-top: 8px;
 `;
-
-export default Splash

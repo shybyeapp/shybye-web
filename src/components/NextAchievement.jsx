@@ -1,38 +1,27 @@
-import React from 'react'
+import React from "react";
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
-const Progress = () => {
+export default function NextAchievement() {
   return (
-    <Grid
-      item
-      xs={12}
-      md={12}
-      sx={{ marginTop: 10 }}
-    >
+    <Grid item xs={12} md={12} sx={{ marginTop: 10 }}>
       <AchievementContainer>
         <AchievementBox>
           <TitleBox>
             <Box>
-              <Typography variant="h5">
-                Next Achievement
-              </Typography>
+              <Typography variant="h5">Next Achievement</Typography>
             </Box>
             <Box>
-              <ViewAllLink>
-                view all
-              </ViewAllLink>
+              <ViewAllLink>view all</ViewAllLink>
             </Box>
           </TitleBox>
-          <MedalBox>
-            Medals
-          </MedalBox>
+          <MedalBox>Medals</MedalBox>
         </AchievementBox>
       </AchievementContainer>
     </Grid>
-  )
+  );
 }
 
 const AchievementContainer = styled.div`
@@ -43,10 +32,10 @@ const AchievementContainer = styled.div`
 `;
 
 const AchievementBox = styled.div`
-  border: 1px solid #DFDFDF;
+  border: 1px solid #dfdfdf;
   border-radius: 5px;
   min-height: 240px;
-`
+`;
 
 const TitleBox = styled.div`
   align-items: center;
@@ -64,7 +53,5 @@ const MedalBox = styled.div`
 `;
 
 const ViewAllLink = styled.div`
-  text-decoration: underline
+  text-decoration: underline;
 `;
-
-export default Progress

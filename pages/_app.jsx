@@ -8,7 +8,7 @@ import Header from "@/components/Header";
 import "@/App.css";
 import "@/index.css";
 
-import { ChallengeProvider } from '../ChallengeContext.js';
+import { ChallengeProvider } from "../ChallengeContext.js";
 
 /** @type {(AppProps: import("next/app").AppProps) => JSX.Element} */
 export default function App({ Component, pageProps }) {
@@ -43,11 +43,11 @@ export default function App({ Component, pageProps }) {
       MuiImageListItemBar: {
         styleOverrides: {
           title: {
-            whiteSpace: 'inherit'
-          }
-        }
-      }
-    }
+            whiteSpace: "inherit",
+          },
+        },
+      },
+    },
   });
 
   return (

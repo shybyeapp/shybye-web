@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
-import StatusBox from './StatusBox';
+import StatusBox from "./StatusBox";
 
-const Progress = () => {
+export default function Progress() {
   return (
     <Grid
       item
@@ -19,7 +19,7 @@ const Progress = () => {
           <ProfileBox>
             <ProfilePicBox>
               <img
-                src='../../../images/badges/speech.png'
+                src="../../../images/badges/speech.png"
                 width={100}
                 height={100}
               />
@@ -40,14 +40,14 @@ const Progress = () => {
             </ProgressBarBox>
           </ProfileBox>
           <StatusContainer>
-            <StatusBox img={'badge'} title={'Medals Earned'}/>
-            <StatusBox img={'streak'} title={'Daily Streak'}/>
-            <StatusBox img={'dino'} title={'Challenges Completed'}/>
+            <StatusBox img={"badge"} title={"Medals Earned"} />
+            <StatusBox img={"streak"} title={"Daily Streak"} />
+            <StatusBox img={"dino"} title={"Challenges Completed"} />
           </StatusContainer>
         </ProgressBox>
       </ProgressContainer>
     </Grid>
-  )
+  );
 }
 
 const ProgressContainer = styled.div`
@@ -69,7 +69,7 @@ const ProgressBox = styled.div`
 
 const ProfileBox = styled.div`
   align-items: center;
-  border: 1px solid #DFDFDF;
+  border: 1px solid #dfdfdf;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: flex;
@@ -81,14 +81,14 @@ const ProfileBox = styled.div`
 
 const ProfilePicBox = styled.div`
   background-color: white;
-  border: 1px solid #DFDFDF;
+  border: 1px solid #dfdfdf;
   border-radius: 50%;
   height: 100px;
   width: 100px;
 `;
 
 const EditLink = styled.p`
-  text-decoration: underline
+  text-decoration: underline;
 `;
 
 const ProgressBarBox = styled.div`
@@ -132,12 +132,12 @@ const ProgressBar = styled.progress`
     border-radius: 20px;
   }
   &::-webkit-progress-value {
-    background-color: #9DBEBB;
+    background-color: #9dbebb;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
   }
   &::-moz-progress-bar {
-    background-color: #9DBEBB;
+    background-color: #9dbebb;
   }
 `;
 
@@ -153,7 +153,7 @@ const Points = styled.p`
 
 const StatusContainer = styled.div`
   align-items: center;
-  border: 1px solid #DFDFDF;
+  border: 1px solid #dfdfdf;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-top: none;
@@ -162,5 +162,3 @@ const StatusContainer = styled.div`
   justify-content: space-around;
   width: 400px;
 `;
-
-export default Progress

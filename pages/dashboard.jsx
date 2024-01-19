@@ -13,12 +13,12 @@ export default function Dashboard() {
         sx={{
           marginTop: 10,
           paddingLeft: 5,
-          paddingRight: 5
+          paddingRight: 5,
         }}
       >
         <Grid item xs={12} md={7}>
-          <Challenges title={'My Challenges'} />
-          <Challenges title={'Browse Challenges'} />
+          <Challenges title={"My Challenges"} />
+          <Challenges title={"Browse Challenges"} />
         </Grid>
         <Grid item xs={12} md={5}>
           <Progress />
