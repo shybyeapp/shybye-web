@@ -59,7 +59,7 @@ export default function Challenges(props) {
         <ImageList sx={{ maxHeight: 600 }} cols={3}>
           {itemData.map((item, index) => (
             <Link
-              href={`/challengeDetail/${item.challengeId}`}
+              href={`/challenges/${item.challengeId}`}
               style={{ textDecoration: "none" }}
               onClick={() => setData(item)}
             >
