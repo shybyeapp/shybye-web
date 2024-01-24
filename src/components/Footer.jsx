@@ -4,25 +4,19 @@ import Container from "@mui/material/Container";
 export default function StickyFooter() {
   return (
     <Box
+      component="footer"
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
+        py: 2,
+        px: 2,
+        mt: "auto",
+        backgroundColor: "#FBF8EE",
+        marginTop: "45vh",
+        height: "2.5vh",
       }}
     >
-      <Box
-        component="footer"
-        sx={{
-          py: 2,
-          px: 2,
-          mt: "auto",
-          backgroundColor: "#FBF8EE",
-        }}
-      >
-        <Container maxWidth="sm">
-          This app was hacked by Team ShyDevs during GDI Hackathon '22! ✨
-        </Container>
-      </Box>
+      <Container maxWidth="sm">
+        This app was hacked by Team ShyDevs during GDI Hackathon '22! ✨
+      </Container>
     </Box>
   );
 }

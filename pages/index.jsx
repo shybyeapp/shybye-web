@@ -35,7 +35,6 @@ export default function Home() {
       alignItems="center"
       justifyContent="center"
       sx={{
-        fontFamily: "Inter",
         fontSize: 32,
         fontWeight: "bold",
         lineHeight: 2,
